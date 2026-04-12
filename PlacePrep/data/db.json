@@ -1,0 +1,823 @@
+{
+  "users": [
+    {
+      "id": "1775934697893",
+      "name": "Guest Explorer",
+      "email": "guest_1775934696609@placeprep.in",
+      "password": "demo"
+    },
+    {
+      "id": "1775934698408",
+      "name": "Guest Explorer",
+      "email": "guest_1775934697756@placeprep.in",
+      "password": "demo"
+    },
+    {
+      "id": "1775934698462",
+      "name": "Guest Explorer",
+      "email": "guest_1775934698110@placeprep.in",
+      "password": "demo"
+    },
+    {
+      "id": "1775934698565",
+      "name": "Guest Explorer",
+      "email": "guest_1775934698264@placeprep.in",
+      "password": "demo"
+    },
+    {
+      "id": "1775934699016",
+      "name": "Guest Explorer",
+      "email": "guest_1775934698412@placeprep.in",
+      "password": "demo"
+    },
+    {
+      "id": "1775934699194",
+      "name": "Guest Explorer",
+      "email": "guest_1775934698612@placeprep.in",
+      "password": "demo"
+    },
+    {
+      "id": "1775934699411",
+      "name": "Guest Explorer",
+      "email": "guest_1775934698793@placeprep.in",
+      "password": "demo"
+    },
+    {
+      "id": "1775934749745",
+      "name": "rudra bundela",
+      "email": "rdrbundela@gmail.com",
+      "password": "1234567890"
+    },
+    {
+      "id": "1775934801009",
+      "name": "Guest Explorer",
+      "email": "guest_1775934800993@placeprep.in",
+      "password": "demo"
+    },
+    {
+      "id": "1775937441705",
+      "name": "Guest Explorer",
+      "email": "guest_1775937441622@placeprep.in",
+      "password": "demo"
+    },
+    {
+      "id": "1775937583271",
+      "name": "Guest Explorer",
+      "email": "guest_1775937583255@placeprep.in",
+      "password": "demo"
+    },
+    {
+      "id": "1775937775454",
+      "name": "Guest Explorer",
+      "email": "guest_1775937775437@placeprep.in",
+      "password": "demo"
+    }
+  ],
+  "history": [
+    {
+      "id": "1775946854745",
+      "email": "rdrbundela@gmail.com",
+      "company": "TCS",
+      "type": "Full",
+      "score": 0,
+      "correct": 0,
+      "wrong": 1,
+      "skipped": 9,
+      "total": 10,
+      "timeTaken": 6,
+      "breakdown": [
+        {
+          "q": "The ratio of milk and water in a mixture is 4:1. How many litres of water should be added to 20 litres of this mixture to make the ratio 4:3?",
+          "opts": [
+            "10 litres",
+            "8 litres",
+            "6 litres",
+            "5 litres"
+          ],
+          "correct": 0,
+          "ans": -1,
+          "type": "Aptitude"
+        },
+        {
+          "q": "What is the output of the following C code?\nprintf(\"%d\", sizeof(\"Hello\"));",
+          "opts": [
+            "5",
+            "6",
+            "Error",
+            "Undefined"
+          ],
+          "correct": 1,
+          "ans": -1,
+          "type": "Technical"
+        },
+        {
+          "q": "What is the remainder when 7^100 is divided by 4?",
+          "opts": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "correct": 1,
+          "ans": -1,
+          "type": "Aptitude"
+        },
+        {
+          "q": "What is the minimum number of edges in a connected graph with n vertices?",
+          "opts": [
+            "n",
+            "n-1",
+            "n+1",
+            "2n-1"
+          ],
+          "correct": 1,
+          "ans": -1,
+          "type": "Technical"
+        },
+        {
+          "q": "Write a program to print the Nth Fibonacci Number.\n\nSample Input:\nN = 5\n\nSample Output:\n5\n\nExplanation:\nThe Fibonacci sequence starts with 0 (0th) and 1 (1st). The sequence is: 0, 1, 1, 2, 3, 5, 8... The 5th number is 5.",
+          "opts": [],
+          "correct": "",
+          "ans": -1,
+          "type": "Coding"
+        },
+        {
+          "q": "If the price of a commodity is decreased by 20% and then increased by 20%, what is the net change in price?",
+          "opts": [
+            "No change",
+            "4% decrease",
+            "4% increase",
+            "2% decrease"
+          ],
+          "correct": 1,
+          "ans": -1,
+          "type": "Aptitude"
+        },
+        {
+          "q": "A can do a piece of work in 10 days and B can do the same work in 15 days. In how many days can they together do the work?",
+          "opts": [
+            "4 days",
+            "5 days",
+            "6 days",
+            "8 days"
+          ],
+          "correct": 2,
+          "ans": -1,
+          "type": "Aptitude"
+        },
+        {
+          "q": "A train 250m long is running at 60 km/h. How long will it take to cross a platform 100m long?",
+          "opts": [
+            "18 sec",
+            "21 sec",
+            "24 sec",
+            "27 sec"
+          ],
+          "correct": 1,
+          "ans": -1,
+          "type": "Aptitude"
+        },
+        {
+          "q": "A shopkeeper sells an article at 20% profit. If the cost price is ₹500, what is the selling price?",
+          "opts": [
+            "₹550",
+            "₹580",
+            "₹600",
+            "₹620"
+          ],
+          "correct": 2,
+          "ans": -1,
+          "type": "Aptitude"
+        },
+        {
+          "q": "Choose the word most similar in meaning to \"EPHEMERAL\":",
+          "opts": [
+            "Eternal",
+            "Transient",
+            "Elaborate",
+            "Significant"
+          ],
+          "correct": 1,
+          "ans": 3,
+          "type": "Verbal"
+        }
+      ],
+      "date": "2026-04-11T22:34:14.745Z"
+    },
+    {
+      "id": "1775946840277",
+      "email": "rdrbundela@gmail.com",
+      "company": "TCS",
+      "type": "Coding",
+      "score": 20,
+      "correct": 1,
+      "wrong": 4,
+      "skipped": 0,
+      "total": 5,
+      "timeTaken": 77,
+      "breakdown": [],
+      "date": "2026-04-11T22:34:00.277Z"
+    },
+    {
+      "id": "1775946586163",
+      "email": "rdrbundela@gmail.com",
+      "company": "TCS",
+      "type": "Coding",
+      "score": 20,
+      "correct": 1,
+      "wrong": 4,
+      "skipped": 0,
+      "total": 5,
+      "timeTaken": 195,
+      "breakdown": [],
+      "date": "2026-04-11T22:29:46.163Z"
+    },
+    {
+      "id": "1775944232166",
+      "email": "rdrbundela@gmail.com",
+      "company": "TCS",
+      "type": "Coding",
+      "score": 20,
+      "correct": 1,
+      "wrong": 4,
+      "skipped": 0,
+      "total": 5,
+      "timeTaken": 350,
+      "breakdown": [],
+      "date": "2026-04-11T21:50:32.166Z"
+    },
+    {
+      "id": "1775943311284",
+      "email": "rdrbundela@gmail.com",
+      "company": "TCS",
+      "type": "Coding",
+      "score": 44,
+      "correct": 0,
+      "wrong": 0,
+      "skipped": 0,
+      "total": 5,
+      "timeTaken": 22,
+      "breakdown": [],
+      "date": "2026-04-11T21:35:11.284Z"
+    },
+    {
+      "id": "1775943215524",
+      "email": "rdrbundela@gmail.com",
+      "company": "TCS",
+      "type": "Technical",
+      "score": 50,
+      "correct": 1,
+      "wrong": 1,
+      "skipped": 0,
+      "total": 2,
+      "timeTaken": 6,
+      "breakdown": [
+        {
+          "q": "What is the output of the following C code?\nprintf(\"%d\", sizeof(\"Hello\"));",
+          "opts": [
+            "5",
+            "6",
+            "Error",
+            "Undefined"
+          ],
+          "correct": 1,
+          "ans": 2,
+          "type": "Technical"
+        },
+        {
+          "q": "What is the minimum number of edges in a connected graph with n vertices?",
+          "opts": [
+            "n",
+            "n-1",
+            "n+1",
+            "2n-1"
+          ],
+          "correct": 1,
+          "ans": 1,
+          "type": "Technical"
+        }
+      ],
+      "date": "2026-04-11T21:33:35.524Z"
+    },
+    {
+      "id": "1775943194732",
+      "email": "rdrbundela@gmail.com",
+      "company": "TCS",
+      "type": "Aptitude",
+      "score": 17,
+      "correct": 1,
+      "wrong": 5,
+      "skipped": 0,
+      "total": 6,
+      "timeTaken": 9,
+      "breakdown": [
+        {
+          "q": "A train 250m long is running at 60 km/h. How long will it take to cross a platform 100m long?",
+          "opts": [
+            "18 sec",
+            "21 sec",
+            "24 sec",
+            "27 sec"
+          ],
+          "correct": 1,
+          "ans": 0,
+          "type": "Aptitude"
+        },
+        {
+          "q": "What is the remainder when 7^100 is divided by 4?",
+          "opts": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "correct": 1,
+          "ans": 0,
+          "type": "Aptitude"
+        },
+        {
+          "q": "A shopkeeper sells an article at 20% profit. If the cost price is ₹500, what is the selling price?",
+          "opts": [
+            "₹550",
+            "₹580",
+            "₹600",
+            "₹620"
+          ],
+          "correct": 2,
+          "ans": 0,
+          "type": "Aptitude"
+        },
+        {
+          "q": "The ratio of milk and water in a mixture is 4:1. How many litres of water should be added to 20 litres of this mixture to make the ratio 4:3?",
+          "opts": [
+            "10 litres",
+            "8 litres",
+            "6 litres",
+            "5 litres"
+          ],
+          "correct": 0,
+          "ans": 0,
+          "type": "Aptitude"
+        },
+        {
+          "q": "A can do a piece of work in 10 days and B can do the same work in 15 days. In how many days can they together do the work?",
+          "opts": [
+            "4 days",
+            "5 days",
+            "6 days",
+            "8 days"
+          ],
+          "correct": 2,
+          "ans": 0,
+          "type": "Aptitude"
+        },
+        {
+          "q": "If the price of a commodity is decreased by 20% and then increased by 20%, what is the net change in price?",
+          "opts": [
+            "No change",
+            "4% decrease",
+            "4% increase",
+            "2% decrease"
+          ],
+          "correct": 1,
+          "ans": 0,
+          "type": "Aptitude"
+        }
+      ],
+      "date": "2026-04-11T21:33:14.732Z"
+    },
+    {
+      "id": "1775943173821",
+      "email": "rdrbundela@gmail.com",
+      "company": "TCS",
+      "type": "Coding",
+      "score": 100,
+      "correct": 0,
+      "wrong": 0,
+      "skipped": 0,
+      "total": 5,
+      "timeTaken": 46,
+      "breakdown": [],
+      "date": "2026-04-11T21:32:53.823Z"
+    },
+    {
+      "id": "1775937797113",
+      "email": "guest_1775937775437@placeprep.in",
+      "company": "TCS",
+      "type": "Coding",
+      "score": 84,
+      "correct": 0,
+      "wrong": 0,
+      "skipped": 0,
+      "total": 5,
+      "timeTaken": 15,
+      "breakdown": [],
+      "date": "2026-04-11T20:03:17.113Z"
+    },
+    {
+      "id": "1775937554694",
+      "email": "guest_1775937441622@placeprep.in",
+      "company": "Amazon",
+      "type": "Coding",
+      "score": 84,
+      "correct": 0,
+      "wrong": 0,
+      "skipped": 0,
+      "total": 5,
+      "timeTaken": 5,
+      "breakdown": [],
+      "date": "2026-04-11T19:59:14.694Z"
+    },
+    {
+      "id": "1775937498298",
+      "email": "guest_1775937441622@placeprep.in",
+      "company": "Amazon",
+      "type": "Aptitude",
+      "score": 20,
+      "correct": 2,
+      "wrong": 8,
+      "skipped": 0,
+      "total": 10,
+      "timeTaken": 16,
+      "breakdown": [
+        {
+          "q": "If A is B's sister, C is B's mother, D is C's father, E is D's mother, then how is A related to D?",
+          "opts": [
+            "Granddaughter",
+            "Niece",
+            "Daughter",
+            "Granddaughter"
+          ],
+          "correct": 0,
+          "ans": 1,
+          "type": "Logical"
+        },
+        {
+          "q": "A can do a piece of work in 10 days and B can do the same work in 15 days. In how many days can they together do the work?",
+          "opts": [
+            "4 days",
+            "5 days",
+            "6 days",
+            "8 days"
+          ],
+          "correct": 2,
+          "ans": 1,
+          "type": "Aptitude"
+        },
+        {
+          "q": "In how many ways can 6 people be seated in a row so that 2 particular people always sit together?",
+          "opts": [
+            "120",
+            "240",
+            "720",
+            "1440"
+          ],
+          "correct": 1,
+          "ans": 0,
+          "type": "Aptitude"
+        },
+        {
+          "q": "If the price of a commodity is decreased by 20% and then increased by 20%, what is the net change in price?",
+          "opts": [
+            "No change",
+            "4% decrease",
+            "4% increase",
+            "2% decrease"
+          ],
+          "correct": 1,
+          "ans": 0,
+          "type": "Aptitude"
+        },
+        {
+          "q": "The ratio of milk and water in a mixture is 4:1. How many litres of water should be added to 20 litres of this mixture to make the ratio 4:3?",
+          "opts": [
+            "10 litres",
+            "8 litres",
+            "6 litres",
+            "5 litres"
+          ],
+          "correct": 0,
+          "ans": 1,
+          "type": "Aptitude"
+        },
+        {
+          "q": "What is the output of the following C code?\nprintf(\"%d\", sizeof(\"Hello\"));",
+          "opts": [
+            "5",
+            "6",
+            "Error",
+            "Undefined"
+          ],
+          "correct": 1,
+          "ans": 2,
+          "type": "Technical"
+        },
+        {
+          "q": "A shopkeeper sells an article at 20% profit. If the cost price is ₹500, what is the selling price?",
+          "opts": [
+            "₹550",
+            "₹580",
+            "₹600",
+            "₹620"
+          ],
+          "correct": 2,
+          "ans": 2,
+          "type": "Aptitude"
+        },
+        {
+          "q": "What is the simple interest on ₹8000 at 12% per annum for 3 years?",
+          "opts": [
+            "₹2160",
+            "₹2880",
+            "₹3200",
+            "₹1920"
+          ],
+          "correct": 1,
+          "ans": 2,
+          "type": "Aptitude"
+        },
+        {
+          "q": "Choose the word most similar in meaning to \"EPHEMERAL\":",
+          "opts": [
+            "Eternal",
+            "Transient",
+            "Elaborate",
+            "Significant"
+          ],
+          "correct": 1,
+          "ans": 1,
+          "type": "Verbal"
+        },
+        {
+          "q": "A train 250m long is running at 60 km/h. How long will it take to cross a platform 100m long?",
+          "opts": [
+            "18 sec",
+            "21 sec",
+            "24 sec",
+            "27 sec"
+          ],
+          "correct": 1,
+          "ans": 2,
+          "type": "Aptitude"
+        }
+      ],
+      "date": "2026-04-11T19:58:18.299Z"
+    },
+    {
+      "id": "1775936228947",
+      "email": "guest_1775934800993@placeprep.in",
+      "company": "TCS",
+      "type": "Coding",
+      "score": 84,
+      "correct": 0,
+      "wrong": 0,
+      "skipped": 0,
+      "total": 5,
+      "timeTaken": 36,
+      "breakdown": [],
+      "date": "2026-04-11T19:37:08.948Z"
+    },
+    {
+      "id": "1775936033831",
+      "email": "guest_1775934800993@placeprep.in",
+      "company": "TCS",
+      "type": "Coding",
+      "score": 84,
+      "correct": 0,
+      "wrong": 0,
+      "skipped": 0,
+      "total": 5,
+      "timeTaken": 20,
+      "breakdown": [],
+      "date": "2026-04-11T19:33:53.831Z"
+    },
+    {
+      "id": "1775936007277",
+      "email": "guest_1775934800993@placeprep.in",
+      "company": "TCS",
+      "type": "Aptitude",
+      "score": 0,
+      "correct": 0,
+      "wrong": 0,
+      "skipped": 6,
+      "total": 6,
+      "timeTaken": 2,
+      "breakdown": [
+        {
+          "q": "If the price of a commodity is decreased by 20% and then increased by 20%, what is the net change in price?",
+          "opts": [
+            "No change",
+            "4% decrease",
+            "4% increase",
+            "2% decrease"
+          ],
+          "correct": 1,
+          "ans": -1,
+          "type": "Aptitude"
+        },
+        {
+          "q": "A shopkeeper sells an article at 20% profit. If the cost price is ₹500, what is the selling price?",
+          "opts": [
+            "₹550",
+            "₹580",
+            "₹600",
+            "₹620"
+          ],
+          "correct": 2,
+          "ans": -1,
+          "type": "Aptitude"
+        },
+        {
+          "q": "A train 250m long is running at 60 km/h. How long will it take to cross a platform 100m long?",
+          "opts": [
+            "18 sec",
+            "21 sec",
+            "24 sec",
+            "27 sec"
+          ],
+          "correct": 1,
+          "ans": -1,
+          "type": "Aptitude"
+        },
+        {
+          "q": "The ratio of milk and water in a mixture is 4:1. How many litres of water should be added to 20 litres of this mixture to make the ratio 4:3?",
+          "opts": [
+            "10 litres",
+            "8 litres",
+            "6 litres",
+            "5 litres"
+          ],
+          "correct": 0,
+          "ans": -1,
+          "type": "Aptitude"
+        },
+        {
+          "q": "What is the remainder when 7^100 is divided by 4?",
+          "opts": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "correct": 1,
+          "ans": -1,
+          "type": "Aptitude"
+        },
+        {
+          "q": "A can do a piece of work in 10 days and B can do the same work in 15 days. In how many days can they together do the work?",
+          "opts": [
+            "4 days",
+            "5 days",
+            "6 days",
+            "8 days"
+          ],
+          "correct": 2,
+          "ans": -1,
+          "type": "Aptitude"
+        }
+      ],
+      "date": "2026-04-11T19:33:27.278Z"
+    },
+    {
+      "id": "1775935792125",
+      "email": "guest_1775934800993@placeprep.in",
+      "company": "TCS",
+      "type": "Coding",
+      "score": 0,
+      "correct": 0,
+      "wrong": 0,
+      "skipped": 0,
+      "total": 5,
+      "timeTaken": 32,
+      "breakdown": [],
+      "date": "2026-04-11T19:29:52.126Z"
+    },
+    {
+      "id": "1775935061252",
+      "email": "guest_1775934800993@placeprep.in",
+      "company": "TCS",
+      "type": "Technical",
+      "score": 50,
+      "correct": 1,
+      "wrong": 1,
+      "skipped": 0,
+      "total": 2,
+      "timeTaken": 5,
+      "breakdown": [
+        {
+          "q": "What is the minimum number of edges in a connected graph with n vertices?",
+          "opts": [
+            "n",
+            "n-1",
+            "n+1",
+            "2n-1"
+          ],
+          "correct": 1,
+          "ans": 1,
+          "type": "Technical"
+        },
+        {
+          "q": "What is the output of the following C code?\nprintf(\"%d\", sizeof(\"Hello\"));",
+          "opts": [
+            "5",
+            "6",
+            "Error",
+            "Undefined"
+          ],
+          "correct": 1,
+          "ans": 2,
+          "type": "Technical"
+        }
+      ],
+      "date": "2026-04-11T19:17:41.254Z"
+    },
+    {
+      "id": "1775934882539",
+      "email": "guest_1775934800993@placeprep.in",
+      "company": "TCS",
+      "type": "Aptitude",
+      "score": 50,
+      "correct": 3,
+      "wrong": 3,
+      "skipped": 0,
+      "total": 6,
+      "timeTaken": 15,
+      "breakdown": [
+        {
+          "q": "A shopkeeper sells an article at 20% profit. If the cost price is ₹500, what is the selling price?",
+          "opts": [
+            "₹550",
+            "₹580",
+            "₹600",
+            "₹620"
+          ],
+          "correct": 2,
+          "ans": 2,
+          "type": "Aptitude"
+        },
+        {
+          "q": "If the price of a commodity is decreased by 20% and then increased by 20%, what is the net change in price?",
+          "opts": [
+            "No change",
+            "4% decrease",
+            "4% increase",
+            "2% decrease"
+          ],
+          "correct": 1,
+          "ans": 2,
+          "type": "Aptitude"
+        },
+        {
+          "q": "A can do a piece of work in 10 days and B can do the same work in 15 days. In how many days can they together do the work?",
+          "opts": [
+            "4 days",
+            "5 days",
+            "6 days",
+            "8 days"
+          ],
+          "correct": 2,
+          "ans": 2,
+          "type": "Aptitude"
+        },
+        {
+          "q": "The ratio of milk and water in a mixture is 4:1. How many litres of water should be added to 20 litres of this mixture to make the ratio 4:3?",
+          "opts": [
+            "10 litres",
+            "8 litres",
+            "6 litres",
+            "5 litres"
+          ],
+          "correct": 0,
+          "ans": 2,
+          "type": "Aptitude"
+        },
+        {
+          "q": "What is the remainder when 7^100 is divided by 4?",
+          "opts": [
+            "0",
+            "1",
+            "2",
+            "3"
+          ],
+          "correct": 1,
+          "ans": 2,
+          "type": "Aptitude"
+        },
+        {
+          "q": "A train 250m long is running at 60 km/h. How long will it take to cross a platform 100m long?",
+          "opts": [
+            "18 sec",
+            "21 sec",
+            "24 sec",
+            "27 sec"
+          ],
+          "correct": 1,
+          "ans": 1,
+          "type": "Aptitude"
+        }
+      ],
+      "date": "2026-04-11T19:14:42.539Z"
+    }
+  ],
+  "tests": []
+}

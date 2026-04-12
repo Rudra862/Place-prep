@@ -1,0 +1,2708 @@
+[
+  {
+    "id": 1,
+    "company": "TCS",
+    "type": "Aptitude",
+    "topic": "Time & Work",
+    "diff": "Easy",
+    "year": 2022,
+    "q": "A can do a piece of work in 10 days and B can do the same work in 15 days. In how many days can they together do the work?",
+    "opts": [
+      "4 days",
+      "5 days",
+      "6 days",
+      "8 days"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 2,
+    "company": "TCS",
+    "type": "Aptitude",
+    "topic": "Percentage",
+    "diff": "Easy",
+    "year": 2023,
+    "q": "If the price of a commodity is decreased by 20% and then increased by 20%, what is the net change in price?",
+    "opts": [
+      "No change",
+      "4% decrease",
+      "4% increase",
+      "2% decrease"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 3,
+    "company": "TCS",
+    "type": "Aptitude",
+    "topic": "Ratio & Proportion",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "The ratio of milk and water in a mixture is 4:1. How many litres of water should be added to 20 litres of this mixture to make the ratio 4:3?",
+    "opts": [
+      "10 litres",
+      "8 litres",
+      "6 litres",
+      "5 litres"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 4,
+    "company": "TCS",
+    "type": "Technical",
+    "topic": "C Programming",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "What is the output of the following C code?\nprintf(\"%d\", sizeof(\"Hello\"));",
+    "opts": [
+      "5",
+      "6",
+      "Error",
+      "Undefined"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 5,
+    "company": "TCS",
+    "type": "Aptitude",
+    "topic": "Profit & Loss",
+    "diff": "Easy",
+    "year": 2020,
+    "q": "A shopkeeper sells an article at 20% profit. If the cost price is ₹500, what is the selling price?",
+    "opts": [
+      "₹550",
+      "₹580",
+      "₹600",
+      "₹620"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 6,
+    "company": "TCS",
+    "type": "Verbal",
+    "topic": "Reading Comprehension",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "Choose the word most similar in meaning to \"EPHEMERAL\":",
+    "opts": [
+      "Eternal",
+      "Transient",
+      "Elaborate",
+      "Significant"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 7,
+    "company": "TCS",
+    "type": "Aptitude",
+    "topic": "Speed & Distance",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "A train 250m long is running at 60 km/h. How long will it take to cross a platform 100m long?",
+    "opts": [
+      "18 sec",
+      "21 sec",
+      "24 sec",
+      "27 sec"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 8,
+    "company": "Infosys",
+    "type": "Logical",
+    "topic": "Puzzles",
+    "diff": "Hard",
+    "year": 2022,
+    "q": "If A is B's sister, C is B's mother, D is C's father, E is D's mother, then how is A related to D?",
+    "opts": [
+      "Granddaughter",
+      "Niece",
+      "Daughter",
+      "Granddaughter"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 9,
+    "company": "Infosys",
+    "type": "Aptitude",
+    "topic": "Simple Interest",
+    "diff": "Easy",
+    "year": 2021,
+    "q": "What is the simple interest on ₹8000 at 12% per annum for 3 years?",
+    "opts": [
+      "₹2160",
+      "₹2880",
+      "₹3200",
+      "₹1920"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 10,
+    "company": "Infosys",
+    "type": "Aptitude",
+    "topic": "Permutations",
+    "diff": "Hard",
+    "year": 2023,
+    "q": "In how many ways can 6 people be seated in a row so that 2 particular people always sit together?",
+    "opts": [
+      "120",
+      "240",
+      "720",
+      "1440"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 11,
+    "company": "Infosys",
+    "type": "Logical",
+    "topic": "Series",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "Find the next number in the series: 2, 6, 12, 20, 30, ?",
+    "opts": [
+      "40",
+      "42",
+      "44",
+      "46"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 12,
+    "company": "Infosys",
+    "type": "Verbal",
+    "topic": "Grammar",
+    "diff": "Easy",
+    "year": 2021,
+    "q": "Choose the correct sentence:",
+    "opts": [
+      "He don't know the answer.",
+      "She have many friends.",
+      "They are playing cricket.",
+      "I has a pen."
+    ],
+    "ans": 2
+  },
+  {
+    "id": 13,
+    "company": "Wipro",
+    "type": "Technical",
+    "topic": "Data Structures",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "Which data structure is used for implementing recursion?",
+    "opts": [
+      "Queue",
+      "Stack",
+      "Tree",
+      "Linked List"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 14,
+    "company": "Wipro",
+    "type": "Aptitude",
+    "topic": "Age Problems",
+    "diff": "Easy",
+    "year": 2023,
+    "q": "The sum of ages of father and son is 65 years. 5 years ago, father was 4 times the age of his son. What is the present age of the son?",
+    "opts": [
+      "15",
+      "17",
+      "19",
+      "21"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 15,
+    "company": "Wipro",
+    "type": "Technical",
+    "topic": "DBMS",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "Which SQL command is used to retrieve data from a database?",
+    "opts": [
+      "INSERT",
+      "UPDATE",
+      "SELECT",
+      "DELETE"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 16,
+    "company": "Wipro",
+    "type": "Aptitude",
+    "topic": "Probability",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "A bag contains 3 red, 4 blue and 5 green balls. A ball is drawn at random. What is the probability that it is blue?",
+    "opts": [
+      "1/3",
+      "1/4",
+      "1/3",
+      "4/12"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 17,
+    "company": "Amazon",
+    "type": "Technical",
+    "topic": "OOP",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "Which OOP principle ensures that the internal representation of an object is hidden from the outside?",
+    "opts": [
+      "Polymorphism",
+      "Inheritance",
+      "Encapsulation",
+      "Abstraction"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 18,
+    "company": "Amazon",
+    "type": "Logical",
+    "topic": "Critical Thinking",
+    "diff": "Hard",
+    "year": 2023,
+    "q": "All roses are flowers. Some flowers fade quickly. Which conclusion is definitely true?",
+    "opts": [
+      "All roses fade quickly",
+      "Some roses fade quickly",
+      "No roses fade quickly",
+      "None of the above"
+    ],
+    "ans": 3
+  },
+  {
+    "id": 19,
+    "company": "Amazon",
+    "type": "Technical",
+    "topic": "Algorithms",
+    "diff": "Hard",
+    "year": 2022,
+    "q": "What is the time complexity of binary search?",
+    "opts": [
+      "O(n)",
+      "O(n²)",
+      "O(log n)",
+      "O(n log n)"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 20,
+    "company": "Amazon",
+    "type": "Technical",
+    "topic": "OS",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "Which scheduling algorithm gives minimum average waiting time?",
+    "opts": [
+      "FCFS",
+      "Round Robin",
+      "SJF",
+      "Priority"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 21,
+    "company": "Accenture",
+    "type": "Aptitude",
+    "topic": "Mixtures",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "In what ratio should water be mixed with milk to gain 20% on selling at cost price?",
+    "opts": [
+      "1:4",
+      "1:5",
+      "2:5",
+      "1:3"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 22,
+    "company": "Accenture",
+    "type": "Verbal",
+    "topic": "Synonyms",
+    "diff": "Easy",
+    "year": 2023,
+    "q": "Choose the synonym of \"COALESCE\":",
+    "opts": [
+      "Separate",
+      "Merge",
+      "Diminish",
+      "Amplify"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 23,
+    "company": "Accenture",
+    "type": "Logical",
+    "topic": "Coding-Decoding",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "If MOUSE is coded as PRUQC, how is SHIFT coded?",
+    "opts": [
+      "VKLIX",
+      "VKLKY",
+      "UKLKX",
+      "WLMKZ"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 24,
+    "company": "Cognizant",
+    "type": "Technical",
+    "topic": "Networking",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "Which layer of the OSI model is responsible for routing?",
+    "opts": [
+      "Data Link",
+      "Transport",
+      "Network",
+      "Session"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 25,
+    "company": "Cognizant",
+    "type": "Aptitude",
+    "topic": "Geometry",
+    "diff": "Easy",
+    "year": 2023,
+    "q": "The perimeter of a square is 36 cm. What is its area?",
+    "opts": [
+      "64 cm²",
+      "81 cm²",
+      "100 cm²",
+      "121 cm²"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 26,
+    "company": "HCL",
+    "type": "Technical",
+    "topic": "Java",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "Which keyword is used to prevent a class from being subclassed in Java?",
+    "opts": [
+      "static",
+      "private",
+      "final",
+      "abstract"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 27,
+    "company": "HCL",
+    "type": "Aptitude",
+    "topic": "Number System",
+    "diff": "Easy",
+    "year": 2023,
+    "q": "What is the LCM of 12, 18, and 24?",
+    "opts": [
+      "36",
+      "48",
+      "72",
+      "96"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 28,
+    "company": "IBM",
+    "type": "Technical",
+    "topic": "Cloud Computing",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "Which type of cloud deployment model is hosted on the public internet and shared across organizations?",
+    "opts": [
+      "Private Cloud",
+      "Hybrid Cloud",
+      "Public Cloud",
+      "Community Cloud"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 29,
+    "company": "IBM",
+    "type": "Logical",
+    "topic": "Matrix Reasoning",
+    "diff": "Hard",
+    "year": 2023,
+    "q": "In a certain code, 247 means \"spread green light\", 198 means \"light is strong\" and 358 means \"green is strong\". What digit represents \"is\"?",
+    "opts": [
+      "1",
+      "9",
+      "8",
+      "3"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 30,
+    "company": "Capgemini",
+    "type": "Technical",
+    "topic": "Pseudo Code",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "What does the following pseudo code output?\nSET x = 5\nWHILE x > 0\n  PRINT x\n  SET x = x - 2\nEND WHILE",
+    "opts": [
+      "5 3 1",
+      "5 4 3 2 1",
+      "5 3",
+      "5 3 1 -1"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 31,
+    "company": "TCS",
+    "type": "Aptitude",
+    "topic": "Number System",
+    "diff": "Easy",
+    "year": 2019,
+    "q": "What is the remainder when 7^100 is divided by 4?",
+    "opts": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 32,
+    "company": "TCS",
+    "type": "Technical",
+    "topic": "Data Structures",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "What is the minimum number of edges in a connected graph with n vertices?",
+    "opts": [
+      "n",
+      "n-1",
+      "n+1",
+      "2n-1"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 33,
+    "company": "Infosys",
+    "type": "Aptitude",
+    "topic": "Boats & Streams",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "A boat goes 40 km upstream in 8 hours and 36 km downstream in 6 hours. What is the speed of the stream?",
+    "opts": [
+      "0.5 km/h",
+      "1 km/h",
+      "1.5 km/h",
+      "2 km/h"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 34,
+    "company": "Wipro",
+    "type": "Verbal",
+    "topic": "Fill in Blanks",
+    "diff": "Easy",
+    "year": 2022,
+    "q": "She _______ to school every day by bus.",
+    "opts": [
+      "go",
+      "goes",
+      "going",
+      "gone"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 35,
+    "company": "Google",
+    "type": "Technical",
+    "topic": "Algorithms",
+    "diff": "Hard",
+    "year": 2023,
+    "q": "What is the best-case time complexity of QuickSort?",
+    "opts": [
+      "O(n)",
+      "O(n log n)",
+      "O(n²)",
+      "O(log n)"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 36,
+    "company": "Amazon",
+    "type": "Coding",
+    "topic": "Arrays",
+    "diff": "Medium",
+    "q": "Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\n\nSample Input:\nnums = [2,7,11,15]\ntarget = 9\n\nSample Output:\n[0,1]\n\nExplanation:\nBecause nums[0] + nums[1] == 9, we return [0, 1].",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 37,
+    "company": "TCS",
+    "type": "Coding",
+    "topic": "Math",
+    "diff": "Easy",
+    "q": "Write a program to print the Nth Fibonacci Number.\n\nSample Input:\nN = 5\n\nSample Output:\n5\n\nExplanation:\nThe Fibonacci sequence starts with 0 (0th) and 1 (1st). The sequence is: 0, 1, 1, 2, 3, 5, 8... The 5th number is 5.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 38,
+    "company": "Wipro",
+    "type": "Coding",
+    "topic": "Strings",
+    "diff": "Easy",
+    "q": "Given a string s, return true if it is a palindrome, or false otherwise.\n\nSample Input:\ns = \"racecar\"\n\nSample Output:\ntrue\n\nExplanation:\n\"racecar\" reads the same forwards and backwards.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 39,
+    "company": "Infosys",
+    "type": "Coding",
+    "topic": "Arrays",
+    "diff": "Medium",
+    "q": "Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array.\n\nSample Input:\nnums = [3,0,1]\n\nSample Output:\n2\n\nExplanation:\nn=3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number because it does not appear in nums.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 40,
+    "company": "Accenture",
+    "type": "Coding",
+    "topic": "Logic",
+    "diff": "Easy",
+    "q": "Write a program that outputs the string representation of numbers from 1 to n. But for multiples of three it should output 'Fizz' instead of the number and for the multiples of five output 'Buzz'. For numbers which are multiples of both three and five output 'FizzBuzz'.\n\nSample Input:\nn = 5\n\nSample Output:\n[\"1\",\"2\",\"Fizz\",\"4\",\"Buzz\"]\n\nExplanation:\n1 and 2 are normal. 3 is a multiple of 3 so output \"Fizz\". 4 is normal. 5 is a multiple of 5 so output \"Buzz\".",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "company": "TCS",
+    "type": "Aptitude",
+    "topic": "Time & Work",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "If 15 men can do a piece of work in 20 days, how many men are required to do the same work in 12 days?",
+    "opts": [
+      "20",
+      "25",
+      "30",
+      "35"
+    ],
+    "ans": 1,
+    "id": 41
+  },
+  {
+    "company": "Infosys",
+    "type": "Aptitude",
+    "topic": "Speed & Distance",
+    "diff": "Hard",
+    "year": 2023,
+    "q": "Two trains running in opposite directions cross a man standing on the platform in 27 seconds and 17 seconds respectively and they cross each other in 23 seconds. The ratio of their speeds is:",
+    "opts": [
+      "1:3",
+      "3:2",
+      "3:4",
+      "None of these"
+    ],
+    "ans": 1,
+    "id": 42
+  },
+  {
+    "company": "Wipro",
+    "type": "Aptitude",
+    "topic": "Probability",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "Tickets numbered 1 to 20 are mixed up and then a ticket is drawn at random. What is the probability that the ticket drawn has a number which is a multiple of 3 or 5?",
+    "opts": [
+      "1/2",
+      "2/5",
+      "8/15",
+      "9/20"
+    ],
+    "ans": 3,
+    "id": 43
+  },
+  {
+    "company": "Amazon",
+    "type": "Logical",
+    "topic": "Seating Arrangement",
+    "diff": "Hard",
+    "year": 2023,
+    "q": "A, B, C, D and E are sitting on a bench. A is sitting next to B, C is sitting next to D, D is not sitting with E who is on the left end of the bench. C is on the second position from the right. A is to the right of B and E. A and C are sitting together. In which position A is sitting?",
+    "opts": [
+      "Between B and D",
+      "Between B and C",
+      "Between E and D",
+      "Between C and E"
+    ],
+    "ans": 1,
+    "id": 44
+  },
+  {
+    "company": "Accenture",
+    "type": "Technical",
+    "topic": "Java",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "Which of the following is not a concept of Object-Oriented Programming in Java?",
+    "opts": [
+      "Polymorphism",
+      "Inheritance",
+      "Compilation",
+      "Encapsulation"
+    ],
+    "ans": 2,
+    "id": 45
+  },
+  {
+    "company": "Cognizant",
+    "type": "Technical",
+    "topic": "Databases",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "Which of the following is a NoSQL database?",
+    "opts": [
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Oracle"
+    ],
+    "ans": 2,
+    "id": 46
+  },
+  {
+    "company": "TCS",
+    "type": "Technical",
+    "topic": "OS",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "What is a semaphore?",
+    "opts": [
+      "A synchronization tool",
+      "A deadlock mechanism",
+      "A memory management technique",
+      "A file system type"
+    ],
+    "ans": 0,
+    "id": 47
+  },
+  {
+    "company": "Google",
+    "type": "Coding",
+    "topic": "Arrays",
+    "diff": "Medium",
+    "q": "Given an array of integers, return the maximum subarray sum.\n\nSample Input:\nnums = [-2,1,-3,4,-1,2,1,-5,4]\n\nSample Output:\n6\n\nExplanation:\nThe contiguous subarray [4,-1,2,1] has the largest sum = 6.",
+    "opts": [],
+    "ans": "",
+    "id": 48
+  },
+  {
+    "company": "Microsoft",
+    "type": "Coding",
+    "topic": "Strings",
+    "diff": "Easy",
+    "q": "Given a string s, find the length of the longest substring without repeating characters.\n\nSample Input:\ns = \"abcabcbb\"\n\nSample Output:\n3\n\nExplanation:\nThe answer is \"abc\", with the length of 3.",
+    "opts": [],
+    "ans": "",
+    "id": 49
+  },
+  {
+    "company": "Amazon",
+    "type": "Coding",
+    "topic": "Logic",
+    "diff": "Easy",
+    "q": "Given an integer x, return true if x is a palindrome, and false otherwise.\n\nSample Input:\nx = 121\n\nSample Output:\ntrue\n\nExplanation:\n121 reads as 121 from left to right and from right to left.",
+    "opts": [],
+    "ans": "",
+    "id": 50
+  },
+  {
+    "company": "TCS",
+    "type": "Coding",
+    "topic": "Math",
+    "diff": "Easy",
+    "q": "Write a function that reverses an integer.\n\nSample Input:\nx = 123\n\nSample Output:\n321\n\nExplanation:\nReverse the digits of 123 to get 321.",
+    "opts": [],
+    "ans": "",
+    "id": 51
+  },
+  {
+    "company": "Wipro",
+    "type": "Coding",
+    "topic": "Arrays",
+    "diff": "Easy",
+    "q": "Given an array of integers that is already sorted in ascending order, find two numbers such that they add up to a specific target number.\n\nSample Input:\nnumbers = [2,7,11,15], target = 9\n\nSample Output:\n[1,2]\n\nExplanation:\nThe sum of 2 and 7 is 9. Therefore, index1 = 1, index2 = 2.",
+    "opts": [],
+    "ans": "",
+    "id": 52
+  },
+  {
+    "company": "TCS",
+    "type": "Aptitude",
+    "topic": "Ages",
+    "diff": "Easy",
+    "year": 2022,
+    "q": "Present ages of Sameer and Anand are in the ratio of 5 : 4 respectively. Three years hence, the ratio of their ages will become 11 : 9 respectively. What is Anand's present age in years?",
+    "opts": [
+      "24",
+      "27",
+      "40",
+      "None of these"
+    ],
+    "ans": 0,
+    "id": 53
+  },
+  {
+    "company": "Infosys",
+    "type": "Aptitude",
+    "topic": "Profit & Loss",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "A vendor bought toffees at 6 for a rupee. How many for a rupee must he sell to gain 20%?",
+    "opts": [
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "ans": 2,
+    "id": 54
+  },
+  {
+    "company": "Cognizant",
+    "type": "Aptitude",
+    "topic": "Number System",
+    "diff": "Hard",
+    "year": 2023,
+    "q": "Which of the following is completely divisible by 99?",
+    "opts": [
+      "3572404",
+      "135792",
+      "913464",
+      "114345"
+    ],
+    "ans": 3,
+    "id": 55
+  },
+  {
+    "company": "Accenture",
+    "type": "Aptitude",
+    "topic": "Percentages",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "A student has to obtain 33% of the total marks to pass. He got 125 marks and failed by 40 marks. The maximum marks are:",
+    "opts": [
+      "300",
+      "500",
+      "800",
+      "1000"
+    ],
+    "ans": 1,
+    "id": 56
+  },
+  {
+    "company": "TCS",
+    "type": "Technical",
+    "topic": "C++",
+    "diff": "Hard",
+    "year": 2022,
+    "q": "What is a virtual destructor in C++?",
+    "opts": [
+      "It is undefined",
+      "Destroys virtual functions",
+      "A destructor that must be overridden",
+      "Ensures proper cleanup of derived class objects when deleted through a base class pointer"
+    ],
+    "ans": 3,
+    "id": 57
+  },
+  {
+    "company": "Infosys",
+    "type": "Technical",
+    "topic": "SQL",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "What is the difference between TRUNCATE and DELETE?",
+    "opts": [
+      "TRUNCATE can be rolled back",
+      "TRUNCATE is a DDL command, DELETE is DML",
+      "No difference",
+      "DELETE resets identity counters"
+    ],
+    "ans": 1,
+    "id": 58
+  },
+  {
+    "company": "Wipro",
+    "type": "Technical",
+    "topic": "Networking",
+    "diff": "Easy",
+    "year": 2023,
+    "q": "Which protocol is used to secure HTTP connections?",
+    "opts": [
+      "FTP",
+      "SSH",
+      "TCP",
+      "HTTPS"
+    ],
+    "ans": 3,
+    "id": 59
+  },
+  {
+    "company": "Cognizant",
+    "type": "Technical",
+    "topic": "Data Structures",
+    "diff": "Hard",
+    "year": 2022,
+    "q": "In a binary search tree, which traversal yields elements in sorted order?",
+    "opts": [
+      "Pre-order",
+      "In-order",
+      "Post-order",
+      "Level-order"
+    ],
+    "ans": 1,
+    "id": 60
+  },
+  {
+    "company": "TCS",
+    "type": "Logical",
+    "topic": "Blood Relations",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "Pointing to a photograph of a boy, Suresh said, 'He is the son of the only son of my mother.' How is Suresh related to that boy?",
+    "opts": [
+      "Brother",
+      "Uncle",
+      "Cousin",
+      "Father"
+    ],
+    "ans": 3,
+    "id": 61
+  },
+  {
+    "company": "Infosys",
+    "type": "Logical",
+    "topic": "Directions",
+    "diff": "Easy",
+    "year": 2021,
+    "q": "A man is facing west. He turns 45 degrees in the clockwise direction and then another 180 degrees in the same direction and then 270 degrees in the anticlockwise direction. Find which direction he is facing now?",
+    "opts": [
+      "South-West",
+      "North-West",
+      "West",
+      "South"
+    ],
+    "ans": 0,
+    "id": 62
+  },
+  {
+    "company": "Wipro",
+    "type": "Logical",
+    "topic": "Syllogism",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "Statements: Some actors are singers. All the singers are dancers. Conclusion 1: Some actors are dancers. Conclusion 2: No singer is actor.",
+    "opts": [
+      "Only conclusion 1 follows",
+      "Only conclusion 2 follows",
+      "Both follow",
+      "Neither follows"
+    ],
+    "ans": 0,
+    "id": 63
+  },
+  {
+    "company": "Amazon",
+    "type": "Coding",
+    "topic": "Trees",
+    "diff": "Hard",
+    "q": "Invert a binary tree.\n\nSample Input:\nroot = [4,2,7,1,3,6,9]\n\nSample Output:\n[4,7,2,9,6,3,1]\n\nExplanation:\nSwap left and right children repeatedly.",
+    "opts": [],
+    "ans": "",
+    "id": 64
+  },
+  {
+    "company": "TCS",
+    "type": "Coding",
+    "topic": "Dynamic Programming",
+    "diff": "Medium",
+    "q": "Climbing Stairs: You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?\n\nSample Input:\nn = 2\n\nSample Output:\n2\n\nExplanation:\n1. 1 step + 1 step\n2. 2 steps",
+    "opts": [],
+    "ans": "",
+    "id": 65
+  },
+  {
+    "id": 66,
+    "company": "Accenture",
+    "type": "Aptitude",
+    "topic": "Time & Work",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "If 12 men complete a work in 10 days, how many days will 8 men take?",
+    "opts": [
+      "12",
+      "15",
+      "18",
+      "20"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 67,
+    "company": "Wipro",
+    "type": "Aptitude",
+    "topic": "Speed & Distance",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "A train crosses a pole in 10 sec and platform in 20 sec. Ratio of lengths?",
+    "opts": [
+      "1:2",
+      "2:1",
+      "1:3",
+      "3:1"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 68,
+    "company": "Amazon",
+    "type": "Aptitude",
+    "topic": "Interest",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "Simple interest on ₹2000 at 10% for 2 years?",
+    "opts": [
+      "200",
+      "300",
+      "400",
+      "500"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 69,
+    "company": "Wipro",
+    "type": "Aptitude",
+    "topic": "Profit & Loss",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "If CP = 500, SP = 600, profit %?",
+    "opts": [
+      "10%",
+      "20%",
+      "25%",
+      "30%"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 70,
+    "company": "Amazon",
+    "type": "Aptitude",
+    "topic": "Number System",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "LCM of 12, 15, 20?",
+    "opts": [
+      "60",
+      "120",
+      "180",
+      "240"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 71,
+    "company": "Wipro",
+    "type": "Aptitude",
+    "topic": "Speed & Distance",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "Speed = 60 km/h, distance = 180 km, time?",
+    "opts": [
+      "2 hr",
+      "3 hr",
+      "4 hr",
+      "5 hr"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 72,
+    "company": "Accenture",
+    "type": "Aptitude",
+    "topic": "Ratio",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "Ratio 2:3, total = 50. The numbers are?",
+    "opts": [
+      "20,30",
+      "15,35",
+      "10,40",
+      "25,25"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 73,
+    "company": "TCS",
+    "type": "Aptitude",
+    "topic": "Interest",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "Compound interest formula?",
+    "opts": [
+      "PRT",
+      "P(1+r)^t",
+      "P+r+t",
+      "PT/r"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 74,
+    "company": "Amazon",
+    "type": "Aptitude",
+    "topic": "Averages",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "Average of 10, 20, 30?",
+    "opts": [
+      "15",
+      "20",
+      "25",
+      "30"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 75,
+    "company": "Cognizant",
+    "type": "Aptitude",
+    "topic": "Ratio",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "A is 2x faster than B. Ratio of their speeds?",
+    "opts": [
+      "1:2",
+      "2:1",
+      "3:1",
+      "1:3"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 76,
+    "company": "Cognizant",
+    "type": "Aptitude",
+    "topic": "Percentages",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "25% of 200 = ?",
+    "opts": [
+      "40",
+      "50",
+      "60",
+      "70"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 77,
+    "company": "Amazon",
+    "type": "Aptitude",
+    "topic": "Math",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "7² + 3² = ?",
+    "opts": [
+      "48",
+      "58",
+      "68",
+      "78"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 78,
+    "company": "Amazon",
+    "type": "Aptitude",
+    "topic": "Math",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "Cube of 5 = ?",
+    "opts": [
+      "15",
+      "25",
+      "125",
+      "625"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 79,
+    "company": "Wipro",
+    "type": "Aptitude",
+    "topic": "Math",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "√144 = ?",
+    "opts": [
+      "12",
+      "14",
+      "16",
+      "18"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 80,
+    "company": "Google",
+    "type": "Aptitude",
+    "topic": "Percentages",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "15% of 300 = ?",
+    "opts": [
+      "30",
+      "45",
+      "60",
+      "75"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 81,
+    "company": "Cognizant",
+    "type": "Aptitude",
+    "topic": "Profit & Loss",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "Profit = SP - ?",
+    "opts": [
+      "Loss",
+      "CP",
+      "Discount",
+      "Tax"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 82,
+    "company": "Infosys",
+    "type": "Aptitude",
+    "topic": "Speed & Distance",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "Time = Distance / ?",
+    "opts": [
+      "Speed",
+      "Area",
+      "Length",
+      "Velocity"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 83,
+    "company": "Wipro",
+    "type": "Aptitude",
+    "topic": "Ratio",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "3:4 = x:20. Find x.",
+    "opts": [
+      "12",
+      "15",
+      "18",
+      "21"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 84,
+    "company": "TCS",
+    "type": "Aptitude",
+    "topic": "Algebra",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "If 2x = 10, then x = ?",
+    "opts": [
+      "5",
+      "10",
+      "15",
+      "20"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 85,
+    "company": "Google",
+    "type": "Aptitude",
+    "topic": "Math",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "100 / 4 = ?",
+    "opts": [
+      "20",
+      "25",
+      "30",
+      "35"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 86,
+    "company": "TCS",
+    "type": "Aptitude",
+    "topic": "Math",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "45 ÷ 5 = ?",
+    "opts": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 87,
+    "company": "Infosys",
+    "type": "Aptitude",
+    "topic": "Math",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "9 × 9 = ?",
+    "opts": [
+      "18",
+      "72",
+      "81",
+      "90"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 88,
+    "company": "Accenture",
+    "type": "Aptitude",
+    "topic": "Math",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "18 + 32 = ?",
+    "opts": [
+      "40",
+      "45",
+      "50",
+      "55"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 89,
+    "company": "Cognizant",
+    "type": "Aptitude",
+    "topic": "Math",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "200 - 75 = ?",
+    "opts": [
+      "115",
+      "125",
+      "135",
+      "145"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 90,
+    "company": "Accenture",
+    "type": "Aptitude",
+    "topic": "Percentages",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "10% of 500 = ?",
+    "opts": [
+      "40",
+      "50",
+      "60",
+      "70"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 91,
+    "company": "Infosys",
+    "type": "Aptitude",
+    "topic": "Permutations",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "5! = ?",
+    "opts": [
+      "20",
+      "60",
+      "120",
+      "240"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 92,
+    "company": "TCS",
+    "type": "Aptitude",
+    "topic": "Math",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "8³ = ?",
+    "opts": [
+      "64",
+      "256",
+      "512",
+      "1024"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 93,
+    "company": "Accenture",
+    "type": "Aptitude",
+    "topic": "Math",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "√81 = ?",
+    "opts": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 94,
+    "company": "Wipro",
+    "type": "Aptitude",
+    "topic": "Fractions",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "1/2 + 1/2 = ?",
+    "opts": [
+      "0",
+      "1",
+      "1.5",
+      "2"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 95,
+    "company": "Infosys",
+    "type": "Aptitude",
+    "topic": "Fractions",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "3/4 of 100 = ?",
+    "opts": [
+      "25",
+      "50",
+      "75",
+      "100"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 96,
+    "company": "Infosys",
+    "type": "Logical",
+    "topic": "Series",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "Series: 2, 4, 8, 16, ?",
+    "opts": [
+      "18",
+      "24",
+      "32",
+      "64"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 97,
+    "company": "Cognizant",
+    "type": "Logical",
+    "topic": "Odd One Out",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "Odd one out: Apple, Banana, Mango, Car",
+    "opts": [
+      "Apple",
+      "Banana",
+      "Mango",
+      "Car"
+    ],
+    "ans": 3
+  },
+  {
+    "id": 98,
+    "company": "Wipro",
+    "type": "Logical",
+    "topic": "Coding",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "Coding: CAT = DBU. DOC = ?",
+    "opts": [
+      "EPD",
+      "EPH",
+      "XYZ",
+      "DPH"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 99,
+    "company": "TCS",
+    "type": "Logical",
+    "topic": "Coding",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "If A=1, B=2, then Z=?",
+    "opts": [
+      "24",
+      "25",
+      "26",
+      "27"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 100,
+    "company": "Amazon",
+    "type": "Logical",
+    "topic": "Series",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "Find missing: 3, 9, 27, ?",
+    "opts": [
+      "54",
+      "81",
+      "108",
+      "243"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 101,
+    "company": "TCS",
+    "type": "Logical",
+    "topic": "Pattern",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "Mirror of 123",
+    "opts": [
+      "321",
+      "213",
+      "132",
+      "312"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 102,
+    "company": "Wipro",
+    "type": "Logical",
+    "topic": "Series",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "5, 10, 20, 40. Next?",
+    "opts": [
+      "50",
+      "60",
+      "70",
+      "80"
+    ],
+    "ans": 3
+  },
+  {
+    "id": 103,
+    "company": "Amazon",
+    "type": "Logical",
+    "topic": "Clocks",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "Angle at 3:00?",
+    "opts": [
+      "45°",
+      "90°",
+      "180°",
+      "360°"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 104,
+    "company": "Amazon",
+    "type": "Logical",
+    "topic": "Directions",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "Opposite of NORTH is?",
+    "opts": [
+      "SOUTH",
+      "EAST",
+      "WEST",
+      "NORTH-EAST"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 105,
+    "company": "Accenture",
+    "type": "Logical",
+    "topic": "Venn Diagram",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "Dog belongs to group?",
+    "opts": [
+      "Animal",
+      "Bird",
+      "Reptile",
+      "Amphibian"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 106,
+    "company": "Google",
+    "type": "Logical",
+    "topic": "Analogy",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "Book : Read :: Food : ?",
+    "opts": [
+      "Drink",
+      "Bite",
+      "Cook",
+      "Eat"
+    ],
+    "ans": 3
+  },
+  {
+    "id": 107,
+    "company": "Infosys",
+    "type": "Logical",
+    "topic": "Series",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "7, 14, 28, next?",
+    "opts": [
+      "35",
+      "42",
+      "49",
+      "56"
+    ],
+    "ans": 3
+  },
+  {
+    "id": 108,
+    "company": "Accenture",
+    "type": "Logical",
+    "topic": "Odd One Out",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "Odd: 2, 3, 5, 9?",
+    "opts": [
+      "2",
+      "3",
+      "5",
+      "9"
+    ],
+    "ans": 3
+  },
+  {
+    "id": 109,
+    "company": "Accenture",
+    "type": "Logical",
+    "topic": "Coding",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "A→Z, B→Y. C→?",
+    "opts": [
+      "W",
+      "X",
+      "Y",
+      "Z"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 110,
+    "company": "TCS",
+    "type": "Logical",
+    "topic": "Blood Relations",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "Father’s brother is?",
+    "opts": [
+      "Uncle",
+      "Nephew",
+      "Cousin",
+      "Brother"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 111,
+    "company": "Cognizant",
+    "type": "Logical",
+    "topic": "Series",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "1, 1, 2, 3, 5. Next?",
+    "opts": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 112,
+    "company": "Amazon",
+    "type": "Logical",
+    "topic": "Directions",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "Facing North, turn Right. Now facing?",
+    "opts": [
+      "South",
+      "West",
+      "East",
+      "North"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 113,
+    "company": "Accenture",
+    "type": "Logical",
+    "topic": "Dice",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "Standard Dice opposite faces sum to?",
+    "opts": [
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 114,
+    "company": "TCS",
+    "type": "Logical",
+    "topic": "Alphabets",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "A, C, F, ?",
+    "opts": [
+      "H",
+      "I",
+      "J",
+      "K"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 115,
+    "company": "Wipro",
+    "type": "Logical",
+    "topic": "Analogy",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "4→16, 5→25, 6→?",
+    "opts": [
+      "30",
+      "36",
+      "42",
+      "48"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 116,
+    "company": "Infosys",
+    "type": "Logical",
+    "topic": "Syllogism",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "Statement-Conclusion dependency?",
+    "opts": [
+      "Independent",
+      "Depends case",
+      "Always True",
+      "Always False"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 117,
+    "company": "TCS",
+    "type": "Logical",
+    "topic": "Coding",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "HELLO → IFMMP. Rule?",
+    "opts": [
+      "+1 shift",
+      "-1 shift",
+      "+2 shift",
+      "-2 shift"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 118,
+    "company": "Wipro",
+    "type": "Logical",
+    "topic": "Missing Number",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "2, 6, 7, 21, 22, ?",
+    "opts": [
+      "23",
+      "44",
+      "66",
+      "88"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 119,
+    "company": "Google",
+    "type": "Logical",
+    "topic": "Clocks",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "Angle at 6:00 is?",
+    "opts": [
+      "90°",
+      "180°",
+      "270°",
+      "360°"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 120,
+    "company": "Wipro",
+    "type": "Logical",
+    "topic": "Dice",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "Sum of opposite faces in standard dice?",
+    "opts": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 121,
+    "company": "TCS",
+    "type": "Logical",
+    "topic": "Series",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "11, 13, 17, ?",
+    "opts": [
+      "18",
+      "19",
+      "21",
+      "23"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 122,
+    "company": "TCS",
+    "type": "Logical",
+    "topic": "Alphabets",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "Reverse of A is?",
+    "opts": [
+      "Y",
+      "X",
+      "W",
+      "Z"
+    ],
+    "ans": 3
+  },
+  {
+    "id": 123,
+    "company": "TCS",
+    "type": "Logical",
+    "topic": "Odd One Out",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "Cow, Dog, Cat, Tiger. Odd one?",
+    "opts": [
+      "Cow",
+      "Dog",
+      "Cat",
+      "Tiger"
+    ],
+    "ans": 3
+  },
+  {
+    "id": 124,
+    "company": "Wipro",
+    "type": "Technical",
+    "topic": "Algorithms",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "Time complexity of binary search?",
+    "opts": [
+      "O(n)",
+      "O(log n)",
+      "O(n²)",
+      "O(1)"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 125,
+    "company": "TCS",
+    "type": "Technical",
+    "topic": "Data Structures",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "Stack follows?",
+    "opts": [
+      "FIFO",
+      "LIFO",
+      "FILO",
+      "Random"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 126,
+    "company": "TCS",
+    "type": "Technical",
+    "topic": "Data Structures",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "Queue follows?",
+    "opts": [
+      "FIFO",
+      "LIFO",
+      "LILO",
+      "Random"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 127,
+    "company": "Infosys",
+    "type": "Technical",
+    "topic": "Databases",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "Which is a DB?",
+    "opts": [
+      "MySQL",
+      "HTML",
+      "CSS",
+      "JS"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 128,
+    "company": "Google",
+    "type": "Technical",
+    "topic": "Databases",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "Primary key?",
+    "opts": [
+      "Duplicate value",
+      "Unique identifier",
+      "Null value",
+      "Foreign relation"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 129,
+    "company": "Infosys",
+    "type": "Technical",
+    "topic": "OS",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "OS manages?",
+    "opts": [
+      "Resources",
+      "Hardware only",
+      "Software only",
+      "Internet"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 130,
+    "company": "TCS",
+    "type": "Technical",
+    "topic": "OS",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "Deadlock condition?",
+    "opts": [
+      "Mutual exclusion",
+      "Hold and wait",
+      "Circular wait",
+      "All of these"
+    ],
+    "ans": 3
+  },
+  {
+    "id": 131,
+    "company": "Google",
+    "type": "Technical",
+    "topic": "Hardware",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "RAM is?",
+    "opts": [
+      "Volatile memory",
+      "Non-volatile memory",
+      "Storage",
+      "Processor"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 132,
+    "company": "Wipro",
+    "type": "Technical",
+    "topic": "Hardware",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "ROM is?",
+    "opts": [
+      "Volatile",
+      "Non-volatile",
+      "Cache",
+      "Register"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 133,
+    "company": "TCS",
+    "type": "Technical",
+    "topic": "Compilers",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "Compiler?",
+    "opts": [
+      "Translates code to machine code",
+      "Interprets line by line",
+      "Edits code",
+      "Debugs code"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 134,
+    "company": "Google",
+    "type": "Technical",
+    "topic": "Java",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "Java is?",
+    "opts": [
+      "Procedural",
+      "OOP language",
+      "Scripting",
+      "Markup"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 135,
+    "company": "Amazon",
+    "type": "Technical",
+    "topic": "C",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "C is?",
+    "opts": [
+      "Procedural",
+      "OOP",
+      "Functional",
+      "Markup"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 136,
+    "company": "Cognizant",
+    "type": "Technical",
+    "topic": "Python",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "Python is?",
+    "opts": [
+      "Compiled",
+      "Interpreted",
+      "Assembly",
+      "Hardware"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 137,
+    "company": "Accenture",
+    "type": "Technical",
+    "topic": "Web",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "HTML is?",
+    "opts": [
+      "Programming language",
+      "Markup language",
+      "Styling language",
+      "Database"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 138,
+    "company": "TCS",
+    "type": "Technical",
+    "topic": "Web",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "CSS stands for?",
+    "opts": [
+      "Computer Style Sheet",
+      "Cascading Style Sheets",
+      "Creative Style System",
+      "Coded Style Sheet"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 139,
+    "company": "Google",
+    "type": "Technical",
+    "topic": "Networking",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "TCP is?",
+    "opts": [
+      "Reliable",
+      "Unreliable",
+      "Datagram",
+      "Stateless"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 140,
+    "company": "TCS",
+    "type": "Technical",
+    "topic": "Networking",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "IP is for?",
+    "opts": [
+      "Addressing",
+      "Routing",
+      "Translation",
+      "Style"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 141,
+    "company": "Infosys",
+    "type": "Technical",
+    "topic": "Networking",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "DNS?",
+    "opts": [
+      "Domain to IP",
+      "IP to MAC",
+      "MAC to IP",
+      "Port to IP"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 142,
+    "company": "Wipro",
+    "type": "Technical",
+    "topic": "Networking",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "HTTP is?",
+    "opts": [
+      "Web protocol",
+      "Mail protocol",
+      "File transfer protocol",
+      "Terminal protocol"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 143,
+    "company": "Wipro",
+    "type": "Technical",
+    "topic": "Networking",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "HTTPS is?",
+    "opts": [
+      "Insecure HTTP",
+      "Secure HTTP",
+      "HyperText Protocol",
+      "Hyper Transfer"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 144,
+    "company": "Amazon",
+    "type": "Technical",
+    "topic": "Data Structures",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "Linked list is?",
+    "opts": [
+      "Static size",
+      "Dynamic size",
+      "Primitive type",
+      "Immutable"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 145,
+    "company": "Wipro",
+    "type": "Technical",
+    "topic": "Data Structures",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "Array is?",
+    "opts": [
+      "Fixed size",
+      "Dynamic size",
+      "Unordered",
+      "Tree-based"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 146,
+    "company": "Accenture",
+    "type": "Technical",
+    "topic": "Data Structures",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "Tree root means?",
+    "opts": [
+      "Bottom node",
+      "Leaf node",
+      "Top node",
+      "Middle node"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 147,
+    "company": "Cognizant",
+    "type": "Technical",
+    "topic": "Data Structures",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "Graph contains?",
+    "opts": [
+      "Nodes + edges",
+      "Roots + leaves",
+      "Arrays + lists",
+      "Stacks + queues"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 148,
+    "company": "Accenture",
+    "type": "Technical",
+    "topic": "Algorithms",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "Recursion is?",
+    "opts": [
+      "Looping construct",
+      "Function calling itself",
+      "Variable declaration",
+      "Data structure"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 149,
+    "company": "Wipro",
+    "type": "Technical",
+    "topic": "SQL",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "SQL SELECT does?",
+    "opts": [
+      "Add data",
+      "Modify data",
+      "Remove data",
+      "Retrieve data"
+    ],
+    "ans": 3
+  },
+  {
+    "id": 150,
+    "company": "Accenture",
+    "type": "Technical",
+    "topic": "SQL",
+    "diff": "Medium",
+    "year": 2020,
+    "q": "SQL INSERT does?",
+    "opts": [
+      "Add data",
+      "Update data",
+      "Delete data",
+      "Order data"
+    ],
+    "ans": 0
+  },
+  {
+    "id": 151,
+    "company": "Amazon",
+    "type": "Technical",
+    "topic": "SQL",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "SQL UPDATE does?",
+    "opts": [
+      "Delete data",
+      "Modify data",
+      "Read data",
+      "Sort data"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 152,
+    "company": "Wipro",
+    "type": "Technical",
+    "topic": "SQL",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "SQL DELETE does?",
+    "opts": [
+      "Update data",
+      "Insert data",
+      "Remove data",
+      "Select data"
+    ],
+    "ans": 2
+  },
+  {
+    "id": 153,
+    "company": "Amazon",
+    "type": "Technical",
+    "topic": "SQL",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "SQL JOIN is used to?",
+    "opts": [
+      "Split tables",
+      "Combine tables",
+      "Drop tables",
+      "Create tables"
+    ],
+    "ans": 1
+  },
+  {
+    "id": 154,
+    "company": "Google",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Easy",
+    "year": 2023,
+    "q": "Reverse a given string.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 155,
+    "company": "TCS",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Easy",
+    "year": 2021,
+    "q": "Check whether a string is a palindrome.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 156,
+    "company": "Wipro",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Easy",
+    "year": 2023,
+    "q": "Find the largest element in an array.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 157,
+    "company": "Infosys",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Easy",
+    "year": 2021,
+    "q": "Count number of digits in an integer.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 158,
+    "company": "Wipro",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Easy",
+    "year": 2021,
+    "q": "Check whether a number is prime.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 159,
+    "company": "Google",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Easy",
+    "year": 2023,
+    "q": "Print Fibonacci series up to N terms.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 160,
+    "company": "Accenture",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Easy",
+    "year": 2022,
+    "q": "Find the sum of all elements in an array.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 161,
+    "company": "Wipro",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Easy",
+    "year": 2021,
+    "q": "Count vowels and consonants in a string.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 162,
+    "company": "Google",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Easy",
+    "year": 2022,
+    "q": "Find the factorial of a number.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 163,
+    "company": "Accenture",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Easy",
+    "year": 2022,
+    "q": "Check whether a number is Armstrong or not.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 164,
+    "company": "Google",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "Find all pairs in an array whose sum equals a target.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 165,
+    "company": "Wipro",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "Remove duplicates from an array.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 166,
+    "company": "Cognizant",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "Check if two strings are anagrams.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 167,
+    "company": "Wipro",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "Sort an array using any sorting technique.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 168,
+    "company": "Amazon",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "Find the second largest element in an array.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 169,
+    "company": "TCS",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "Move all zeros in an array to the end.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 170,
+    "company": "Infosys",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "Find the frequency of each element in an array.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 171,
+    "company": "Wipro",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Medium",
+    "year": 2022,
+    "q": "Reverse words in a sentence.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 172,
+    "company": "Amazon",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Medium",
+    "year": 2021,
+    "q": "Find missing number in array from 1 to N.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 173,
+    "company": "Google",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Medium",
+    "year": 2023,
+    "q": "Find intersection of two arrays.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 174,
+    "company": "TCS",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Hard",
+    "year": 2022,
+    "q": "Find the longest substring without repeating characters.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 175,
+    "company": "Infosys",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Hard",
+    "year": 2022,
+    "q": "Maximum subarray sum (Kadane’s Problem).\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 176,
+    "company": "Amazon",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Hard",
+    "year": 2023,
+    "q": "Merge two sorted arrays without extra space.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 177,
+    "company": "Infosys",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Hard",
+    "year": 2021,
+    "q": "Check if parentheses are balanced.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 178,
+    "company": "TCS",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Hard",
+    "year": 2021,
+    "q": "Find majority element in an array (> n/2 times).\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 179,
+    "company": "Amazon",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Hard",
+    "year": 2022,
+    "q": "Detect cycle in a linked list.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 180,
+    "company": "Wipro",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Hard",
+    "year": 2021,
+    "q": "Find the first non-repeating character in a string.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 181,
+    "company": "Cognizant",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Hard",
+    "year": 2022,
+    "q": "Implement binary search.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 182,
+    "company": "Wipro",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Hard",
+    "year": 2021,
+    "q": "Find kth largest element in an array.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  },
+  {
+    "id": 183,
+    "company": "Amazon",
+    "type": "Coding",
+    "topic": "Algorithms",
+    "diff": "Hard",
+    "year": 2022,
+    "q": "Solve the Two Sum problem efficiently.\n\nWrite an optimal solution observing Edge Cases.",
+    "opts": [],
+    "ans": ""
+  }
+]

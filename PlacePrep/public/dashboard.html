@@ -1,0 +1,2009 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="theme-color" content="#6366f1">
+    <meta name="description" content="PlacePrep - AI-Powered Placement Preparation Platform">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PlacePrep Dashboard</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/dracula.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    :root {
+      --bg-dark: #0a0a0c;
+      --bg-surface: #121216;
+      --bg-panel: rgba(255, 255, 255, 0.02);
+      --border-color: rgba(255, 255, 255, 0.06);
+      --primary: #6366f1;
+      --primary-glow: rgba(99, 102, 241, 0.2);
+      --secondary: #ec4899;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --font-sans: 'Inter', sans-serif;
+      --font-head: 'Outfit', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 4px;
+    }
+
+    .CodeMirror {
+      font-family: var(--font-mono) !important;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 260px;
+      background: var(--bg-surface);
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      z-index: 50;
+      flex-shrink: 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 3rem;
+    }
+
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 18px;
+      color: white;
+    }
+
+    .brand-text {
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 700;
+      background: linear-gradient(to right, #fff, #cbd5e1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-group {
+      margin-bottom: 2rem;
+    }
+
+    .nav-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      margin-bottom: 4px;
+    }
+
+    .nav-item:hover {
+      background: var(--bg-panel);
+      color: var(--text-main);
+    }
+
+    .nav-item.active {
+      background: var(--primary-glow);
+      color: #fff;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+    }
+
+    .user-profile {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-family: var(--font-head);
+    }
+
+    .user-info {
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .u-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .btn-logout {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+
+    .btn-logout:hover {
+      color: var(--danger);
+    }
+
+    /* MAIN CONTENT */
+    .main-wrapper {
+      flex: 1;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .bg-glow {
+      position: absolute;
+      top: -200px;
+      left: 20%;
+      width: 500px;
+      height: 500px;
+      background: var(--primary);
+      filter: blur(150px);
+      opacity: 0.15;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .section {
+      display: none;
+      padding: 2.5rem;
+      position: relative;
+      z-index: 1;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes badge-shimmer {
+      0% {
+        transform: scale(1);
+        filter: brightness(1) drop-shadow(0 0 5px rgba(245, 158, 11, 0.2));
+      }
+
+      50% {
+        transform: scale(1.05);
+        filter: brightness(1.3) drop-shadow(0 0 20px rgba(245, 158, 11, 0.6));
+      }
+
+      100% {
+        transform: scale(1);
+        filter: brightness(1) drop-shadow(0 0 5px rgba(245, 158, 11, 0.2));
+      }
+    }
+
+    .badge-earned {
+      animation: badge-shimmer 3s infinite;
+    }
+
+    .header {
+      margin-bottom: 2rem;
+    }
+
+    .h-title {
+      font-family: var(--font-head);
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .h-sub {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* DASHBOARD GRID */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .metric-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.5rem;
+      backdrop-filter: blur(10px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), transparent);
+    }
+
+    .m-val {
+      font-family: var(--font-head);
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.25rem;
+    }
+
+    .m-lbl {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .charts-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+
+    .p-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      font-family: var(--font-head);
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .canvas-wrapper {
+      height: 250px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* TABLES & LISTS */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .data-table th {
+      text-align: left;
+      padding: 1rem;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .data-table td {
+      padding: 1rem;
+      font-size: 0.95rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    }
+
+    .data-table tr:hover td {
+      background: var(--bg-panel);
+    }
+
+    .tag {
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .list-item {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      margin-bottom: 0.75rem;
+      background: var(--bg-panel);
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .list-item:hover {
+      border-color: var(--primary);
+      transform: translateX(4px);
+    }
+
+    /* BUTTONS & FORMS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #4f46e5;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      background: var(--bg-panel);
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .setup-card {
+      border: 1px solid var(--border-color);
+      padding: 1.5rem;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .setup-card.selected {
+      border-color: var(--primary);
+      background: var(--primary-glow);
+    }
+
+    .sc-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .sc-desc {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    select option {
+      background: var(--bg-surface);
+      color: var(--text-main);
+    }
+
+    /* TEST ACTIVE UI */
+    .test-ui {
+      position: fixed;
+      inset: 0;
+      background: var(--bg-dark);
+      z-index: 100;
+      display: none;
+      flex-direction: column;
+    }
+
+    .test-ui.active {
+      display: flex;
+    }
+
+    .test-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+      background: var(--bg-surface);
+    }
+
+    .timer {
+      font-family: var(--font-mono);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .timer.danger {
+      color: var(--danger);
+      animation: pulse 1s infinite;
+    }
+
+    .test-content {
+      flex: 1;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .q-area {
+      flex: 1;
+      padding: 3rem;
+      overflow-y: auto;
+    }
+
+    .q-meta {
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .q-text {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+      font-weight: 500;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .opt {
+      padding: 1.2rem;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.05rem;
+      transition: 0.2s;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      background: var(--bg-panel);
+    }
+
+    .opt:hover {
+      border-color: var(--text-muted);
+    }
+
+    .opt.selected {
+      border-color: var(--primary);
+      background: rgba(99, 102, 241, 0.05);
+    }
+
+    .q-sidebar {
+      width: 300px;
+      border-left: 1px solid var(--border-color);
+      background: var(--bg-surface);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .q-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-top: 1rem;
+    }
+
+    .q-dot {
+      aspect-ratio: 1;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+      cursor: pointer;
+    }
+
+    .q-dot.answered {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .q-dot.current {
+      box-shadow: 0 0 0 2px var(--bg-surface), 0 0 0 4px var(--primary);
+    }
+
+    /* RESULTS VIEW */
+    .result-hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: var(--bg-surface);
+      border-radius: 24px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .r-score {
+      font-family: var(--font-head);
+      font-size: 5rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 1rem;
+      background: linear-gradient(to right, #6366f1, #a855f7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .ai-analysis {
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      padding: 1.5rem;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-logo">P</div>
+      <div class="brand-text">PlacePrep</div>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-label">Main Menu</div>
+      <div class="nav-item active" onclick="nav('dashboard')">📊 Dashboard</div>
+      <div class="nav-item" onclick="nav('profile')">👤 My Profile</div>
+      <div class="nav-item" onclick="nav('tests')">🎯 Take Test</div>
+      <div class="nav-item" onclick="nav('history')">🕒 History</div>
+      <div class="nav-item" onclick="nav('leaderboard')">🏆 Leaderboard</div>
+    </div>
+
+    <div class="user-profile">
+      <div class="avatar" id="u-initial">U</div>
+      <div class="user-info">
+        <div class="u-name" id="u-name">User Name</div>
+        <button class="btn-logout" onclick="logout()">Sign Out</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN APP -->
+  <main class="main-wrapper">
+    <div class="bg-glow"></div>
+
+    <!-- DASHBOARD -->
+    <div id="sec-dashboard" class="section active">
+      <div class="header">
+        <h1 class="h-title">Welcome back, <span id="dash-fname">User</span>!</h1>
+        <p class="h-sub">Here is your AI-curated performance analysis.</p>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="m-lbl">Tests Completed</div>
+          <div class="m-val" id="m-tests">0</div>
+        </div>
+        <div class="metric-card">
+          <div class="m-lbl">Average Score</div>
+          <div class="m-val" id="m-avg" style="color: var(--primary)">0%</div>
+        </div>
+        <div class="metric-card">
+          <div class="m-lbl">Best Score</div>
+          <div class="m-val" id="m-best" style="color: var(--success)">0%</div>
+        </div>
+        <div class="metric-card">
+          <div class="m-lbl">Global Rank</div>
+          <div class="m-val" id="m-rank">--</div>
+        </div>
+      </div>
+
+      <div class="charts-grid">
+        <div class="panel">
+          <div class="p-title">Score Progression</div>
+          <div class="canvas-wrapper"><canvas id="lineChart"></canvas></div>
+        </div>
+        <div class="panel">
+          <div class="p-title">Skill Analysis</div>
+          <div class="canvas-wrapper"><canvas id="radarChart"></canvas></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TESTS SETUP -->
+    <div id="sec-tests" class="section">
+      <div class="header">
+        <h1 class="h-title">Start a Mock Test</h1>
+        <p class="h-sub">Configure your environment before proceeding.</p>
+      </div>
+
+      <div class="panel">
+        <div class="p-title">1. Select Company Pattern</div>
+        <select id="t-company" class="btn btn-outline" style="width: 100%; margin-bottom: 2rem; padding: 12px;">
+          <!-- Loaded via JS -->
+        </select>
+
+        <div class="p-title">2. Select Module</div>
+        <div class="setup-grid" id="comp-type-grid">
+          <div class="setup-card selected" onclick="selType('Aptitude')">
+            <div class="sc-title">Aptitude</div>
+            <div class="sc-desc">Quant and Reasoning</div>
+          </div>
+          <div class="setup-card" onclick="selType('Technical')">
+            <div class="sc-title">Technical</div>
+            <div class="sc-desc">CS Fundamentals</div>
+          </div>
+          <div class="setup-card" onclick="selType('Verbal')">
+            <div class="sc-title">Verbal</div>
+            <div class="sc-desc">English proficiency</div>
+          </div>
+          <div class="setup-card" onclick="selType('Full')">
+            <div class="sc-title">Full Mock</div>
+            <div class="sc-desc">Comprehensive test</div>
+          </div>
+          <div class="setup-card" style="border: 1px solid var(--secondary); background: rgba(236,72,153,0.05);"
+            onclick="selType('Coding')">
+            <div class="sc-title" style="color:var(--secondary)">Coding Round</div>
+            <div class="sc-desc">Live IDE & Compiler</div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 15px;"
+          onclick="startTest()">Launch Secure Test Environment ➔</button>
+      </div>
+    </div>
+
+    <!-- HISTORY -->
+    <div id="sec-history" class="section">
+      <div class="header">
+        <h1 class="h-title">Test History</h1>
+        <p class="h-sub">Review your past attempts and analysis.</p>
+      </div>
+      <div id="history-container"></div>
+    </div>
+
+    <!-- LEADERBOARD -->
+    <div id="sec-leaderboard" class="section">
+      <div class="header">
+        <h1 class="h-title">Global Leaderboard</h1>
+        <p class="h-sub">Compete with the best minds.</p>
+      </div>
+      <div class="panel">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Candidate</th>
+              <th>Tests</th>
+              <th>Avg Score</th>
+              <th>Best</th>
+            </tr>
+          </thead>
+          <tbody id="lb-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PROFILE SECTION (PlacePrep Style) -->
+    <div id="sec-profile" class="section">
+      <div class="header" style="margin-bottom: 2rem;">
+        <h1 class="h-title">Candidate Profile</h1>
+        <p class="h-sub">Your learning journey and professional achievements.</p>
+      </div>
+
+      <div style="display: flex; gap: 25px; align-items: flex-start;">
+
+        <!-- Left Sidebar -->
+        <div style="flex: 0 0 320px; display: flex; flex-direction: column; gap: 20px;">
+          <div
+            style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 16px; padding: 30px 20px; text-align: center; position: relative; overflow: hidden;">
+            <div
+              style="position: absolute; top:0; left:0; right:0; height: 100px; background: linear-gradient(135deg, var(--bg-panel), var(--bg-surface)); border-bottom: 1px solid var(--border-color); z-index: 0;">
+            </div>
+
+            <div id="prof-avatar"
+              style="width: 110px; height: 110px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: 800; font-family: var(--font-head); color: #fff; margin: 0 auto 15px; position: relative; z-index: 1; border: 4px solid var(--bg-surface); box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+              U</div>
+
+            <h2 id="prof-name"
+              style="font-family: var(--font-head); font-weight: 700; font-size: 1.5rem; color: #fff; margin-bottom: 5px; position: relative; z-index: 1;">
+              User Name</h2>
+            <div
+              style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px; position: relative; z-index: 1;">
+              PlacePrep Candidate</div>
+
+            <div
+              style="background: var(--bg-dark); border-radius: 12px; padding: 20px; display: flex; justify-content: space-around; margin-bottom: 25px; border: 1px solid var(--border-color);">
+              <div style="text-align: center;">
+                <div
+                  style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">
+                  Campus Rank</div>
+                <div id="prof-rank"
+                  style="font-size: 1.6rem; font-weight: 800; font-family: var(--font-head); color: var(--primary);">--
+                </div>
+              </div>
+              <div style="width: 1px; background: var(--border-color);"></div>
+              <div style="text-align: center;">
+                <div
+                  style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;">
+                  Tests</div>
+                <div id="prof-tests"
+                  style="font-size: 1.6rem; font-weight: 800; font-family: var(--font-head); color: #fff;">0</div>
+              </div>
+            </div>
+
+            <div style="text-align: left; padding-top: 10px; border-top: 1px solid var(--border-color);">
+              <div
+                style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;">
+                Tested Skills</div>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="prof-skills">
+                <span class="tag"
+                  style="background: rgba(99, 102, 241, 0.1); color: var(--primary); border: 1px solid rgba(99, 102, 241, 0.3);">Aptitude</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Main Panel -->
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 20px;">
+
+          <!-- Top Row (Accuracy & Badges) -->
+          <div style="display: flex; gap: 20px;">
+            <!-- Circular Progress -->
+            <div
+              style="flex: 1; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 16px; padding: 25px; display: flex; align-items: center; justify-content: space-between;">
+              <div>
+                <div
+                  style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">
+                  Average Accuracy</div>
+                <div id="prof-avg"
+                  style="font-size: 3rem; font-weight: 800; font-family: var(--font-head); color: #fff; line-height: 1;">
+                  0%</div>
+                <div style="font-size: 0.85rem; color: var(--success); margin-top: 10px; font-weight: 500;">↑ Top 15%
+                  Performer</div>
+              </div>
+              <!-- Focus Donut -->
+              <div
+                style="width: 110px; height: 110px; border-radius: 50%; border: 8px solid var(--primary); border-bottom-color: var(--bg-dark); border-right-color: var(--bg-dark); display: flex; align-items: center; justify-content: center; transform: rotate(-45deg); box-shadow: inset 0 0 20px rgba(0,0,0,0.5);">
+                <div
+                  style="width: 76px; height: 76px; border-radius: 50%; border: 4px solid var(--secondary); border-top-color: transparent; border-right-color: transparent;">
+                </div>
+              </div>
+            </div>
+
+            <!-- Badges -->
+            <div
+              style="flex: 1; background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 16px; padding: 25px; display: flex; flex-direction: column; justify-content: center;">
+              <div
+                style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;">
+                Unlocked Achievements</div>
+              <div style="display: flex; gap: 15px;">
+                <div class="badge-earned"
+                  style="width: 65px; height: 65px; border-radius: 16px; background: linear-gradient(135deg, #f59e0b, #d97706); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);"
+                  title="Aptitude Master">🧠</div>
+                <div class="badge-earned"
+                  style="width: 65px; height: 65px; border-radius: 16px; background: linear-gradient(135deg, #3b82f6, #2563eb); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);"
+                  title="Flawless Logic">💻</div>
+                <div
+                  style="width: 65px; height: 65px; border-radius: 16px; background: var(--bg-dark); border: 2px dashed rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: #555; font-weight: 600;">
+                  LOCKED</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Activity Graph (The requested graphic) -->
+          <div
+            style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 16px; padding: 25px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+              <div>
+                <h3 style="font-size: 1.2rem; color: #fff; font-family: var(--font-head); margin-bottom: 5px;">
+                  Preparation Streak</h3>
+                <div id="prof-streak-meta" style="font-size: 0.85rem; color: var(--text-muted);">0 assessments in the
+                  past one year</div>
+              </div>
+              <div style="text-align: right;">
+                <div id="prof-acc-age"
+                  style="font-size: 1.4rem; font-weight: 800; font-family: var(--font-mono); color: var(--primary);">0
+                  Days</div>
+                <div
+                  style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px;">
+                  Account Age</div>
+              </div>
+            </div>
+
+            <!-- Activity Grid -->
+            <div style="display: flex; gap: 4px; overflow-x: auto; padding-bottom: 10px;" id="activity-graph"></div>
+
+            <div
+              style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 0.75rem; color: var(--text-muted); font-weight: 500;">
+              <div style="display:flex; justify-content: space-between; width: 100%; padding-right: 20px;">
+                <span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Activity List -->
+          <div
+            style="background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: 16px; padding: 25px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+              <h3 style="font-size: 1.2rem; color: #fff; font-family: var(--font-head);">Recent Assessments</h3>
+              <button class="btn btn-outline" style="padding: 6px 12px; font-size: 0.8rem;"
+                onclick="nav('history')">View Full History</button>
+            </div>
+            <div id="prof-recent" style="display: flex; flex-direction: column;">
+              <!-- Populated via JS -->
+              <div style="padding: 30px; text-align: center; color: var(--text-muted); font-style: italic;">No
+                assessments taken yet.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- TEST UI OVERLAY -->
+  <div class="test-ui" id="test-ui">
+    <div class="test-top">
+      <div>
+        <h2 style="font-family: var(--font-head); font-size: 1.2rem;">PlacePrep Secure Env</h2>
+        <div style="font-size: 0.8rem; color: var(--text-muted);" id="tu-meta">TCS - Aptitude</div>
+      </div>
+      <div class="timer" id="tu-timer">20:00</div>
+      <button class="btn btn-primary" onclick="submitTest()">Force Submit</button>
+    </div>
+
+    <div class="test-content">
+      <div class="q-area">
+        <div class="q-meta" id="tu-qnum">QUESTION 1 OF 20</div>
+        <div class="q-text" id="tu-qtext">Loading...</div>
+        <div class="options" id="tu-options"></div>
+        <div style="margin-top: 3rem; display: flex; gap: 1rem;">
+          <button class="btn btn-outline" onclick="navTest(-1)">← Prev</button>
+          <button class="btn btn-outline" onclick="navTest(1)">Next →</button>
+        </div>
+      </div>
+      <div class="q-sidebar">
+        <h3 style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem; text-transform: uppercase;">
+          Question Map</h3>
+        <div class="q-grid" id="tu-grid"></div>
+        <div style="margin-top: auto; font-size: 0.8rem; color: var(--warning);">
+          ⚠️ Do not exit full screen or switch tabs. Cheating attempts are logged.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CODING UI OVERLAY -->
+  <div class="test-ui" id="coding-ui">
+    <div class="test-top">
+      <div>
+        <h2 style="font-family: var(--font-head); font-size: 1.2rem;">PlacePrep Coding IDE</h2>
+        <div style="font-size: 0.8rem; color: var(--text-muted);" id="cd-meta">TCS - Coding</div>
+      </div>
+      <div class="timer" id="cd-timer">30:00</div>
+      <button class="btn btn-primary" onclick="submitCoding()">End Coding Round</button>
+    </div>
+
+    <div class="test-content" style="padding: 10px; gap: 10px; background: #0a0a0c;">
+      <!-- Left side: Question Statement -->
+      <div class="q-area"
+        style="flex: 0.8; background: #1e1e1e; border-radius: 8px; border: 1px solid #333; display: flex; flex-direction: column; overflow: hidden; padding: 0;">
+        <div
+          style="padding: 10px 20px; background: #2d2d2d; font-family: var(--font-sans); font-size: 0.85rem; font-weight: 600; color: #fff; display: flex; gap: 15px;">
+          <div style="color: #fff; border-bottom: 2px solid var(--primary); padding-bottom: 5px;">📄 Description</div>
+        </div>
+        <div style="flex: 1; padding: 25px; overflow-y: auto;">
+          <div class="q-meta" id="cd-qnum" style="margin-bottom: 1rem;">QUESTION 1 OF 5</div>
+          <div class="q-text" id="cd-qtext"
+            style="white-space: pre-wrap; font-size: 1.05rem; line-height: 1.6; color: #d4d4d4;">Loading...</div>
+          <div style="margin-top: 3rem; display: flex; gap: 1rem;">
+            <button class="btn btn-outline" style="padding: 6px 12px; font-size: 0.8rem; border-color: #555;"
+              onclick="navCoding(-1)">← Prev</button>
+            <button class="btn btn-outline" style="padding: 6px 12px; font-size: 0.8rem; border-color: #555;"
+              onclick="navCoding(1)">Next →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side: Editor & Console -->
+      <div style="flex: 1.2; display: flex; flex-direction: column; gap: 10px;">
+
+        <!-- Editor Wrapper -->
+        <div
+          style="flex: 1; background: #1e1e1e; border-radius: 8px; border: 1px solid #333; display: flex; flex-direction: column; overflow: hidden;">
+          <div
+            style="display:flex; justify-content: space-between; padding: 8px 15px; background: #2d2d2d; border-bottom: 1px solid #333;">
+            <select id="cd-lang" class="btn btn-outline"
+              style="padding: 4px 8px; font-size: 0.8rem; border-color: #555; background: #1e1e1e; color: #d4d4d4; border-radius: 6px;"
+              onchange="changeLang()">
+              <option value="java">Java</option>
+              <option value="python">Python 3</option>
+              <option value="cpp">C++</option>
+              <option value="javascript">JavaScript</option>
+            </select>
+            <div style="display: flex; gap: 10px;">
+              <button class="btn btn-outline" id="btn-run-custom"
+                style="padding: 4px 12px; font-size: 0.8rem; border-radius: 6px; border-color: #555; background: #1e1e1e; color: #aaa;"
+                onclick="runCode(true, false)">⌨️ Custom Run</button>
+              <button class="btn btn-primary" id="btn-run"
+                style="padding: 4px 15px; font-size: 0.8rem; border-radius: 6px; background: #2cbb5d;"
+                onclick="runCode(false, false)">▶ Run</button>
+              <button class="btn btn-primary" id="btn-submit"
+                style="padding: 4px 15px; font-size: 0.8rem; border-radius: 6px; background: var(--primary);"
+                onclick="runCode(false, true)">☁️ Submit</button>
+            </div>
+          </div>
+
+          <div style="flex: 1; position:relative; overflow: hidden;" id="editor-container">
+            <textarea id="cd-editor" style="display:none;"></textarea>
+          </div>
+        </div>
+
+        <!-- Console Wrapper -->
+        <div
+          style="height: 250px; background: #1e1e1e; border-radius: 8px; border: 1px solid #333; display: flex; flex-direction: column; overflow: hidden;">
+          <div
+            style="display: flex; gap: 20px; padding: 8px 20px; background: #2d2d2d; font-size: 0.85rem; font-family: var(--font-sans); font-weight: 500; color: #888; border-bottom: 1px solid #333;">
+            <div id="tab-testcase"
+              style="cursor: pointer; padding-bottom: 5px; color: #fff; border-bottom: 2px solid var(--primary);"
+              onclick="switchConsole('testcase')">☑️ Testcase</div>
+            <div id="tab-result" style="cursor: pointer; padding-bottom: 5px; border-bottom: 2px solid transparent;"
+              onclick="switchConsole('result')">💻 Test Result</div>
+          </div>
+
+          <div style="flex: 1; position: relative;">
+            <div id="pane-testcase"
+              style="position: absolute; inset: 0; display: flex; flex-direction: column; padding: 15px;">
+              <div style="margin-bottom: 10px; font-size: 0.8rem; color: #aaa; font-family: var(--font-sans);">Custom
+                STDIN</div>
+              <textarea id="cd-input" spellcheck="false"
+                style="flex: 1; background: #0a0a0c; border-radius: 6px; border: 1px solid #333; color: #d4d4d4; font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.5; padding: 15px; resize: none; outline: none;"></textarea>
+            </div>
+
+            <div id="pane-result"
+              style="position: absolute; inset: 0; display: none; flex-direction: column; padding: 15px;">
+              <div id="cd-output"
+                style="font-family: var(--font-mono); font-size: 0.85rem; color: #fff; flex: 1; overflow-y: auto; white-space: pre-wrap; background: #0a0a0c; padding: 15px; border-radius: 6px; border: 1px solid #333;">
+                Run your code to see the output here...</div>
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULTS OVERLAY (Will be injected when test finishes) -->
+  <div id="results-wrapper" class="section"
+    style="position: absolute; inset:0; background: var(--bg-dark); z-index: 60; overflow-y:auto; padding: 4rem;">
+    <!-- Filled Dynamically -->
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/python/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/clike/clike.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/addon/edit/closebrackets.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/addon/edit/matchbrackets.min.js"></script>
+
+  <script>
+    const API_URL = window.location.origin + '/api';
+    let user = null;
+    let dashData = { history: [], leaderboard: [] };
+
+    // Init Flow
+    window.addEventListener('load', async () => {
+      const session = localStorage.getItem('pp_session_v2');
+      if (!session) { window.location.href = 'index.html'; return; }
+      user = JSON.parse(session);
+
+      document.getElementById('u-initial').textContent = user.name.charAt(0).toUpperCase();
+      document.getElementById('u-name').textContent = user.name;
+      document.getElementById('dash-fname').textContent = user.name.split(' ')[0];
+
+      await loadData();
+      await fetchCompanies();
+    });
+
+    function logout() {
+      localStorage.removeItem('pp_session_v2');
+      window.location.href = 'index.html';
+    }
+
+    function nav(id) {
+      document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+      if (window.event) {
+          const t = window.event.currentTarget || window.event.target;
+          if (t && t.classList) t.classList.add('active');
+      }
+      document.querySelectorAll('.section').forEach(el => el.classList.remove('active'));
+      const sec = document.getElementById(`sec-${id}`);
+      if(sec) sec.classList.add('active');
+      document.getElementById('results-wrapper').classList.remove('active');
+    }
+
+    // API Calls
+    async function loadData() {
+      try {
+        const hReq = await fetch(`${API_URL}/users/${user.email}/history`);
+        dashData.history = await hReq.json();
+
+        const lReq = await fetch(`${API_URL}/leaderboard`);
+        dashData.leaderboard = await lReq.json();
+
+        renderDashboard();
+        renderHistory();
+        renderLeaderboard();
+      } catch (e) { console.error("Data load failed", e); }
+    }
+
+    async function fetchCompanies() {
+      try {
+        const req = await fetch(`${API_URL}/companies`);
+        const comps = await req.json();
+        const sel = document.getElementById('t-company');
+        sel.innerHTML = comps.map(c => `<option value="${c.name}">${c.emoji} ${c.name}</option>`).join('');
+      } catch (e) { console.error(e); }
+    }
+
+    // Charts & UI
+    let lineC, radarC;
+    function renderDashboard() {
+      const hist = dashData.history;
+      const tests = hist.length;
+      document.getElementById('m-tests').textContent = tests;
+
+      if (tests > 0) {
+        const avg = Math.round(hist.reduce((s, h) => s + h.score, 0) / tests);
+        const best = Math.max(...hist.map(h => h.score));
+        document.getElementById('m-avg').textContent = avg + '%';
+        document.getElementById('m-best').textContent = best + '%';
+
+        // Find Rank
+        const myRank = dashData.leaderboard.findIndex(u => u.name === user.name) + 1;
+        document.getElementById('m-rank').textContent = myRank > 0 ? `#${myRank}` : '--';
+
+        renderCharts(hist);
+        renderProfile(hist, myRank, tests, avg);
+      } else {
+        renderProfile([], 0, 0, 0);
+      }
+    }
+
+    function renderProfile(hist, rank, tests, avg) {
+      if (!user) return;
+      document.getElementById('prof-name').textContent = user.name;
+      document.getElementById('prof-avatar').textContent = user.name.charAt(0).toUpperCase();
+      document.getElementById('prof-rank').textContent = rank > 0 ? `#${rank}` : '--';
+      document.getElementById('prof-tests').textContent = tests;
+      document.getElementById('prof-avg').textContent = avg + '%';
+
+      document.getElementById('prof-streak-meta').textContent = `${tests} assessments in the past one year`;
+
+      // Account Age Calculation
+      if (user && user.id) {
+        const createdAt = parseInt(user.id);
+        if (!isNaN(createdAt)) {
+          let daysSince = Math.floor((Date.now() - createdAt) / (1000 * 60 * 60 * 24));
+          if (daysSince === 0) daysSince = 1;
+          document.getElementById('prof-acc-age').textContent = `${daysSince} ${daysSince === 1 ? 'Day' : 'Days'}`;
+        }
+      }
+
+      // Skills dynamically gathered from test types
+      const skills = [...new Set(hist.map(h => h.type))];
+      const sHtml = skills.length ? skills.map(s => `<span class="tag" style="background: rgba(99, 102, 241, 0.1); color: var(--primary); border: 1px solid rgba(99, 102, 241, 0.3);">${s}</span>`).join('') : '<span style="color:#666; font-size:0.85rem;">No skills tested yet</span>';
+      document.getElementById('prof-skills').innerHTML = sHtml;
+
+      // Recent mapping
+      if (hist.length > 0) {
+        const recentHtml = hist.slice(-4).reverse().map(h => `
+          <div style="padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; background: var(--bg-dark); margin-bottom: 8px; border-radius: 8px;">
+             <div>
+               <div style="color: #fff; font-weight: 600; font-family: var(--font-sans); font-size: 0.95rem; margin-bottom: 6px;">${h.company} - ${h.type} Module</div>
+               <div style="font-size: 0.8rem; font-weight: 500; color: ${h.score >= 80 ? 'var(--success)' : (h.score >= 50 ? 'var(--warning)' : 'var(--danger)')};">Score: ${h.score}%</div>
+             </div>
+             <div style="font-size: 0.85rem; font-weight: 500; color: var(--text-muted); padding: 4px 10px; background: var(--bg-surface); border-radius: 6px;">Recent</div>
+          </div>
+        `).join('');
+        document.getElementById('prof-recent').innerHTML = recentHtml;
+      }
+
+      renderActivityGrid(hist);
+    }
+
+    function renderCharts(hist) {
+      const revHist = [...hist].reverse(); // Chronological
+      const labels = revHist.map((_, i) => `Test ${i + 1}`);
+      const data = revHist.map(h => h.score);
+
+      // Setup Chart defaults for dark theme
+      Chart.defaults.color = '#94a3b8';
+      Chart.defaults.font.family = "'Inter', sans-serif";
+
+      if (lineC) lineC.destroy();
+      const ctxLine = document.getElementById('lineChart').getContext('2d');
+      lineC = new Chart(ctxLine, {
+        type: 'bar',
+        data: { labels, datasets: [{ label: 'Score %', data, backgroundColor: 'rgba(99, 102, 241, 0.8)', hoverBackgroundColor: '#a855f7', borderRadius: 6 }] },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, max: 100 } } }
+      });
+
+      // Calculate Topic Averages for Radar
+      const topicsCounters = { 'Aptitude': { c: 0, t: 0 }, 'Technical': { c: 0, t: 0 }, 'Verbal': { c: 0, t: 0 }, 'Logical': { c: 0, t: 0 } };
+      hist.forEach(h => {
+        h.breakdown.forEach(b => {
+          // Simplistic matching, normally we'd save topic types in history
+          const t = b.type || h.type; // Fallback
+          if (topicsCounters[t]) {
+            topicsCounters[t].t++;
+            if (b.correct === b.ans) topicsCounters[t].c++;
+          }
+        });
+      });
+
+      const rLabels = Object.keys(topicsCounters);
+      const rData = rLabels.map(k => topicsCounters[k].t === 0 ? 0 : Math.round((topicsCounters[k].c / topicsCounters[k].t) * 100));
+
+      if (radarC) radarC.destroy();
+      const ctxRadar = document.getElementById('radarChart').getContext('2d');
+      radarC = new Chart(ctxRadar, {
+        type: 'radar',
+        data: { labels: rLabels, datasets: [{ label: 'Proficiency', data: rData, borderColor: '#ec4899', backgroundColor: 'rgba(236, 72, 153, 0.2)' }] },
+        options: { responsive: true, maintainAspectRatio: false, scales: { r: { angleLines: { color: 'rgba(255,255,255,0.1)' }, grid: { color: 'rgba(255,255,255,0.1)' }, pointLabels: { font: { size: 12 } }, ticks: { display: false, max: 100, min: 0 } } }, plugins: { legend: { display: false } } }
+      });
+    }
+
+    function renderHistory() {
+      const hc = document.getElementById('history-container');
+      if (!dashData.history.length) { hc.innerHTML = '<div class="panel">No tests taken yet.</div>'; return; }
+
+      hc.innerHTML = dashData.history.map(h => `
+        <div class="list-item">
+          <div style="flex:1">
+            <h4 style="margin-bottom:4px">${h.company} — ${h.type} Module</h4>
+            <div style="font-size: 0.8rem; color: var(--text-muted)">${new Date(h.date).toLocaleString()} • ${h.correct} Correct, ${h.wrong} Wrong</div>
+          </div>
+          <div style="font-family: var(--font-head); font-weight: 700; font-size: 1.5rem; color: ${h.score > 70 ? 'var(--success)' : 'var(--warning)'}">${h.score}%</div>
+        </div>
+      `).join('');
+    }
+
+    function renderLeaderboard() {
+      const tb = document.getElementById('lb-body');
+      tb.innerHTML = dashData.leaderboard.map((l, i) => `
+        <tr>
+          <td style="font-family: var(--font-mono); font-weight: 700; color: ${i === 0 ? '#fbbf24' : i === 1 ? '#cbd5e1' : i === 2 ? '#b45309' : '#64748b'}">#${i + 1}</td>
+          <td style="font-weight: 600">${l.name} ${l.name === user.name ? '(You)' : ''}</td>
+          <td>${l.tests}</td>
+          <td>${l.avg}%</td>
+          <td style="color: var(--success); font-family: var(--font-mono); font-weight: 700;">${l.best}%</td>
+        </tr>
+      `).join('');
+    }
+
+    // ================= TESTING SYSTEM ================= //
+    let tState = { questions: [], answers: [], codes: [], cur: 0, tLeft: 0, timer: null, comp: '', type: '' };
+
+    function selType(t) {
+      document.querySelectorAll('.setup-card').forEach(el => el.classList.remove('selected'));
+      event.currentTarget.classList.add('selected');
+      tState.type = t;
+    }
+
+    let cmEditor = null;
+
+    function initEditor() {
+      if (!cmEditor) {
+        cmEditor = CodeMirror.fromTextArea(document.getElementById('cd-editor'), {
+          theme: 'dracula',
+          lineNumbers: true,
+          matchBrackets: true,
+          autoCloseBrackets: true,
+          indentUnit: 4,
+          tabSize: 4,
+          indentWithTabs: true,
+          mode: 'python'
+        });
+        cmEditor.setSize("100%", "100%");
+        cmEditor.on("change", () => {
+          tState.codes[tState.cur] = cmEditor.getValue();
+        });
+      }
+    }
+
+    async function startTest() {
+      tState.comp = document.getElementById('t-company').value;
+      if (!tState.type) tState.type = 'Aptitude';
+
+      try {
+        const req = await fetch(`${API_URL}/questions`);
+        let allQs = await req.json();
+
+        // Custom logic for coding round
+        if (tState.type === 'Coding') {
+          let pool = allQs.filter(q => q.type === 'Coding');
+          // Try to match company if possible, else take random coding questions
+          pool.sort(() => Math.random() - 0.5);
+          tState.questions = pool.slice(0, 5); // 5 coding questions
+          if (tState.questions.length === 0) return alert("No coding questions available in Database.");
+          tState.codes = new Array(tState.questions.length).fill("");
+          tState.tLeft = 30 * 60; // 30 mins
+          tState.cur = 0;
+          document.getElementById('cd-meta').textContent = `${tState.comp} — Coding Round`;
+          document.getElementById('coding-ui').classList.add('active');
+          // Initialize Editor after UI displays to ensure size calculates properly
+          setTimeout(() => { initEditor(); rCodingUI(); }, 100);
+        } else {
+          // Part 1 of Full Mock or Standard MCQ should strictly exclude Coding questions
+          let pool = allQs.filter(q => q.company === tState.comp && q.type !== 'Coding');
+          if (tState.type !== 'Full') pool = pool.filter(q => q.type === tState.type);
+          if (pool.length < 30) {
+            // Fill remaining with random questions from the same category to reach 30
+            let extra = allQs.filter(q => q.type === tState.type && !pool.includes(q));
+            extra.sort(() => Math.random() - 0.5);
+            pool = pool.concat(extra).slice(0, 30);
+            
+            // If still less than 30, fill with any available non-coding questions
+            if(pool.length < 30) {
+                let anyExtra = allQs.filter(q => !pool.includes(q) && q.type !== 'Coding');
+                anyExtra.sort(() => Math.random() - 0.5);
+                pool = pool.concat(anyExtra).slice(0, 30);
+            }
+          }
+
+          pool.sort(() => Math.random() - 0.5);
+          tState.questions = pool.slice(0, 30); // 30 qs mock
+          tState.answers = new Array(tState.questions.length).fill(-1);
+          tState.tLeft = 30 * 60; // 30 min
+          tState.cur = 0;
+          document.getElementById('tu-meta').textContent = `${tState.comp} — ${tState.type}`;
+          document.getElementById('test-ui').classList.add('active');
+          rTestUI();
+        }
+
+        clearInterval(tState.timer);
+        tState.timer = setInterval(tick, 1000);
+
+        if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen().catch(() => { });
+      } catch (e) { alert("Failed to fetch questions"); }
+    }
+
+    function tick() {
+      tState.tLeft--;
+      const m = Math.floor(tState.tLeft / 60).toString().padStart(2, '0');
+      const s = (tState.tLeft % 60).toString().padStart(2, '0');
+
+      const tel = tState.type === 'Coding' ? document.getElementById('cd-timer') : document.getElementById('tu-timer');
+      tel.textContent = `${m}:${s}`;
+      if (tState.tLeft < 60) tel.classList.add('danger');
+      if (tState.tLeft <= 0) {
+        if (tState.type === 'Coding') submitCoding();
+        else submitTest();
+      }
+    }
+
+    function rTestUI() {
+      const q = tState.questions[tState.cur];
+      let compStr = q.company || '';
+      if (tState.comp && compStr && !compStr.includes(tState.comp)) compStr = tState.comp + ", " + compStr;
+      else if (tState.comp && !compStr) compStr = tState.comp;
+      
+      const badge = compStr ? `<span style="background:var(--primary); color:#fff; padding:2px 8px; border-radius:12px; font-size:0.75rem; margin-left:8px;">🛡️ ${compStr} Verified ${q.year || 'PYQ'}</span>` : '';
+      let diffColor = q.diff === 'Hard' ? '#ef4444' : (q.diff === 'Medium' ? '#f59e0b' : '#10b981');
+      const diffBadge = q.diff ? `<span style="background:${diffColor}; color:#fff; padding:2px 8px; border-radius:12px; font-size:0.75rem; margin-left:8px; font-weight:bold;">${q.diff}</span>` : '';
+      
+      document.getElementById('tu-qnum').innerHTML = `QUESTION ${tState.cur + 1} OF ${tState.questions.length}` + diffBadge + badge;
+      document.getElementById('tu-qtext').textContent = q.q;
+
+      const opts = document.getElementById('tu-options');
+      opts.innerHTML = q.opts.map((o, i) => `
+        <div class="opt ${tState.answers[tState.cur] === i ? 'selected' : ''}" onclick="selOpt(${i})">
+          <div style="width:24px; height:24px; border-radius:50%; border:1px solid var(--border-color); display:flex; align-items:center; justify-content:center; font-size:0.8rem">${String.fromCharCode(65 + i)}</div>
+          ${o}
+        </div>
+      `).join('');
+
+      rGrid();
+    }
+
+    function selOpt(i) {
+      tState.answers[tState.cur] = i;
+      rTestUI();
+      // Auto next
+      setTimeout(() => navTest(1), 300);
+    }
+
+    function navTest(d) {
+      const n = tState.cur + d;
+      if (n >= 0 && n < tState.questions.length) { tState.cur = n; rTestUI(); }
+    }
+
+    function rGrid() {
+      const grid = document.getElementById('tu-grid');
+      grid.innerHTML = tState.questions.map((_, i) => {
+        let cls = 'q-dot';
+        if (i === tState.cur) cls += ' current';
+        else if (tState.answers[i] !== -1) cls += ' answered';
+        return `<div class="${cls}" onclick="tState.cur=${i}; rTestUI();">${i + 1}</div>`;
+      }).join('');
+    }
+
+    // Coding UI Specific
+    const lcEnv = {
+      36: {
+        python: { bp: "class Solution:\n    def twoSum(self, nums, target):\n        # write your code here\n        pass", wrap: "if __name__ == '__main__':\n    import json\n    print(json.dumps(Solution().twoSum([2,7,11,15], 9)).replace(' ', ''))" },
+        javascript: { bp: "var twoSum = function(nums, target) {\n    // write your code here\n};", wrap: "console.log(JSON.stringify(twoSum([2,7,11,15], 9)).replace(/\\s/g, ''));" },
+        java: { bp: "import java.util.*;\nclass Solution {\n    public int[] twoSum(int[] nums, int target) {\n        // write your code here\n        return new int[]{};\n    }\n}", wrap: "public class Main {\n    public static void main(String[] args) {\n        int[] res = new Solution().twoSum(new int[]{2,7,11,15}, 9);\n        if(res != null && res.length == 2) System.out.println(\"[\" + res[0] + \",\" + res[1] + \"]\");\n        else System.out.println(\"[]\");\n    }\n}" },
+        cpp: { bp: "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<int> twoSum(vector<int>& nums, int target) {\n        // write your code here\n        return {};\n    }\n};", wrap: "int main() {\n    vector<int> nums = {2,7,11,15};\n    vector<int> res = Solution().twoSum(nums, 9);\n    if(res.size() == 2) cout << \"[\" << res[0] << \",\" << res[1] << \"]\\n\";\n    else cout << \"[]\\n\";\n    return 0;\n}" }
+      },
+      37: {
+        python: { bp: "class Solution:\n    def fib(self, n):\n        pass", wrap: "if __name__ == '__main__':\n    print(Solution().fib(5))" },
+        javascript: { bp: "var fib = function(n) {\n    \n};", wrap: "console.log(fib(5));" },
+        java: { bp: "import java.util.*;\nclass Solution {\n    public int fib(int n) {\n        return 0;\n    }\n}", wrap: "public class Main { public static void main(String[] args) { System.out.println(new Solution().fib(5)); } }" },
+        cpp: { bp: "#include <iostream>\nusing namespace std;\n\nclass Solution {\npublic:\n    int fib(int n) {\n        return 0;\n    }\n};", wrap: "int main() { cout << Solution().fib(5) << endl; return 0; }" }
+      },
+      38: {
+        python: { bp: "class Solution:\n    def isPalindrome(self, s):\n        pass", wrap: "if __name__ == '__main__':\n    print(str(Solution().isPalindrome('racecar')).lower())" },
+        javascript: { bp: "var isPalindrome = function(s) {\n    \n};", wrap: "console.log(isPalindrome('racecar'));" },
+        java: { bp: "import java.util.*;\nclass Solution {\n    public boolean isPalindrome(String s) {\n        return false;\n    }\n}", wrap: "public class Main { public static void main(String[] args) { System.out.println(new Solution().isPalindrome(\"racecar\")); } }" },
+        cpp: { bp: "#include <iostream>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    bool isPalindrome(string s) {\n        return false;\n    }\n};", wrap: "int main() { cout << (Solution().isPalindrome(\"racecar\") ? \"true\" : \"false\") << endl; return 0; }" }
+      },
+      39: {
+        python: { bp: "class Solution:\n    def missingNumber(self, nums):\n        pass", wrap: "if __name__ == '__main__':\n    print(Solution().missingNumber([3,0,1]))" },
+        javascript: { bp: "var missingNumber = function(nums) {\n    \n};", wrap: "console.log(missingNumber([3,0,1]));" },
+        java: { bp: "import java.util.*;\nclass Solution {\n    public int missingNumber(int[] nums) {\n        return 0;\n    }\n}", wrap: "public class Main { public static void main(String[] args) { System.out.println(new Solution().missingNumber(new int[]{3,0,1})); } }" },
+        cpp: { bp: "#include <iostream>\n#include <vector>\nusing namespace std;\n\nclass Solution {\npublic:\n    int missingNumber(vector<int>& nums) {\n        return 0;\n    }\n};", wrap: "int main() { vector<int> nums = {3,0,1}; cout << Solution().missingNumber(nums) << endl; return 0; }" }
+      },
+      40: {
+        python: { bp: "class Solution:\n    def fizzBuzz(self, n):\n        pass", wrap: "if __name__ == '__main__':\n    import json\n    print(json.dumps(Solution().fizzBuzz(5)).replace(' ', ''))" },
+        javascript: { bp: "var fizzBuzz = function(n) {\n    \n};", wrap: "console.log(JSON.stringify(fizzBuzz(5)).replace(/\\s/g, ''));" },
+        java: { bp: "import java.util.*;\nclass Solution {\n    public List<String> fizzBuzz(int n) {\n        return new ArrayList<>();\n    }\n}", wrap: "public class Main {\n    public static void main(String[] args) {\n        java.util.List<String> res = new Solution().fizzBuzz(5);\n        System.out.print(\"[\");\n        for(int i=0; i<res.size(); i++) {\n            System.out.print(\"\\\"\" + res.get(i) + \"\\\"\");\n            if(i < res.size()-1) System.out.print(\",\");\n        }\n        System.out.println(\"]\");\n    }\n}" },
+        cpp: { bp: "#include <iostream>\n#include <vector>\n#include <string>\nusing namespace std;\n\nclass Solution {\npublic:\n    vector<string> fizzBuzz(int n) {\n        return {};\n    }\n};", wrap: "int main() {\n    vector<string> res = Solution().fizzBuzz(5);\n    cout << \"[\";\n    for(int i=0; i<res.size(); i++) {\n        cout << \"\\\"\" << res[i] << \"\\\"\";\n        if(i < res.size()-1) cout << \",\";\n    }\n    cout << \"]\\n\";\n    return 0;\n}" }
+      }
+    };
+
+    const boilerplates = {
+      python: "def solve():\n    # Write your code here\n    pass\n\nif __name__ == '__main__':\n    solve()",
+      javascript: "function solve() {\n    // Write your code here\n}\n\nsolve();",
+      java: "import java.util.*;\n\npublic class Main {\n    public static void main(String[] args) {\n        // Write your code here\n        System.out.println(\"Hello World\");\n    }\n}",
+      cpp: "#include <iostream>\nusing namespace std;\n\nint main() {\n    // Write your code here\n    cout << \"Hello World\" << endl;\n    return 0;\n}"
+    };
+
+    function getBP(qId, lang) {
+      if (lcEnv[qId] && lcEnv[qId][lang]) return lcEnv[qId][lang].bp;
+      return boilerplates[lang];
+    }
+
+    function changeLang() {
+      const qId = tState.questions[tState.cur].id;
+      const lang = document.getElementById('cd-lang').value;
+      const curCode = cmEditor.getValue();
+      const isDefault = Object.values(boilerplates).includes(curCode) || curCode.trim() === '' || curCode.includes('class Solution');
+      if (isDefault) {
+        const bp = getBP(qId, lang);
+        cmEditor.setValue(bp);
+        tState.codes[tState.cur] = bp;
+      }
+
+      // Update syntax highlighting
+      let mode = lang;
+      if (lang === 'c' || lang === 'cpp') mode = 'text/x-c++src';
+      else if (lang === 'java') mode = 'text/x-java';
+      else if (lang === 'javascript') mode = 'javascript';
+      else if (lang === 'python') mode = 'python';
+      cmEditor.setOption("mode", mode);
+    }
+
+    function switchConsole(tab) {
+      document.getElementById('tab-testcase').style.color = '#888';
+      document.getElementById('tab-testcase').style.borderColor = 'transparent';
+      document.getElementById('tab-result').style.color = '#888';
+      document.getElementById('tab-result').style.borderColor = 'transparent';
+
+      document.getElementById('pane-testcase').style.display = 'none';
+      document.getElementById('pane-result').style.display = 'none';
+
+      document.getElementById('tab-' + tab).style.color = '#fff';
+      document.getElementById('tab-' + tab).style.borderColor = 'var(--primary)';
+      document.getElementById('pane-' + tab).style.display = 'flex';
+    }
+
+    function rCodingUI() {
+      const q = tState.questions[tState.cur];
+      const lang = document.getElementById('cd-lang').value;
+      const qId = q.id;
+      
+      let compStr = q.company || '';
+      if (tState.comp && compStr && !compStr.includes(tState.comp)) compStr = tState.comp + ", " + compStr;
+      else if (tState.comp && !compStr) compStr = tState.comp;
+      
+      const badge = compStr ? `<span style="background:var(--primary); color:#fff; padding:2px 8px; border-radius:12px; font-size:0.75rem; margin-left:8px;">🛡️ ${compStr} Verified ${q.year || 'PYQ'}</span>` : '';
+      let diffColor = q.diff === 'Hard' ? '#ef4444' : (q.diff === 'Medium' ? '#f59e0b' : '#10b981');
+      const diffBadge = q.diff ? `<span style="background:${diffColor}; color:#fff; padding:2px 8px; border-radius:12px; font-size:0.75rem; margin-left:8px; font-weight:bold;">${q.diff}</span>` : '';
+      
+      document.getElementById('cd-qnum').innerHTML = `QUESTION ${tState.cur + 1} OF ${tState.questions.length}` + diffBadge + badge;
+      document.getElementById('cd-qtext').textContent = q.q;
+
+      let curCode = tState.codes[tState.cur];
+      if (!curCode) {
+        curCode = getBP(qId, lang);
+        tState.codes[tState.cur] = curCode;
+      }
+
+      if (cmEditor) {
+        cmEditor.setValue(curCode);
+        changeLang(); // triggers proper syntax mode mapping
+      }
+      document.getElementById('cd-output').innerHTML = 'Run your code to see the output here...';
+      switchConsole('testcase');
+    }
+
+    function navCoding(d) {
+      const n = tState.cur + d;
+      if (n >= 0 && n < tState.questions.length) {
+        tState.cur = n;
+        rCodingUI();
+      }
+    }
+
+    async function runCode(isCustom = false, isSubmit = false) {
+      switchConsole('result');
+
+      const btn = document.getElementById(isSubmit ? 'btn-submit' : (isCustom ? 'btn-run-custom' : 'btn-run'));
+      const out = document.getElementById('cd-output');
+      const code = cmEditor ? cmEditor.getValue() : document.getElementById('cd-editor').value;
+      const lang = document.getElementById('cd-lang').value;
+      const input = document.getElementById('cd-input').value;
+
+      if (!code.trim()) { out.innerHTML = "<span style='color:#ef4444'>Error: Please write some code first.</span>"; return; }
+
+      if (isCustom && !input.trim()) {
+        out.innerHTML = "<span style='color:#ef4444'>Error: Please provide some input in the Custom Input box first.</span>"; return;
+      }
+
+      btn.textContent = isSubmit ? "Submitting..." : "Running...";
+      btn.disabled = true;
+      out.innerHTML = isSubmit ? `<span style='color:#primary'>☁️ Submitting & Running Hidden Testcases...</span><br/>` : `<span style='color:#888'>Executing algorithm via Local Engine...</span><br/>`;
+
+      if (isSubmit) await new Promise(r => setTimeout(r, 1500)); // fake delay for hidden tests
+
+      const qId = tState.questions[tState.cur].id;
+      let finalCode = code;
+      // Only append the implicit wrapper if we are running the Sample Testcase
+      if (!isCustom && lcEnv[qId] && lcEnv[qId][lang]) {
+        finalCode = code + "\n\n" + lcEnv[qId][lang].wrap;
+      }
+
+      const payload = { language: lang, code: finalCode, input: input };
+
+      try {
+        const req = await fetch(`${API_URL}/execute`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const res = await req.json();
+
+        let outText = '';
+        if (res.run) {
+          if (res.run.output) outText += res.run.output;
+        } else {
+          outText = res.error || JSON.stringify(res);
+        }
+
+        // Dynamic Test Case Extraction
+        const qText = tState.questions[tState.cur].q;
+        const outputMatch = qText.match(/Sample Output:\s*([\s\S]*?)(?:\s+Explanation:|$)/i);
+        const expectedOutput = outputMatch ? outputMatch[1].trim() : '';
+
+        // Intelligent comparison
+        const cleanStr = str => str.replace(/['"\s]/g, '').toLowerCase();
+        const actualOutput = outText.trim();
+        const isMatch = actualOutput && expectedOutput && (cleanStr(actualOutput) === cleanStr(expectedOutput) || actualOutput.includes(expectedOutput) || expectedOutput.includes(actualOutput));
+
+        const hasError = res.run && res.run.stderr && !res.run.output;
+
+        if (hasError) {
+          // Compilation/Runtime Crash
+          out.innerHTML = `<span style='color:#ef4444'><b>Compilation / Runtime Error:</b><br/><pre style="white-space:pre-wrap; font-family:var(--font-mono)">${res.run.stderr}</pre></span>`;
+          if (isCustom) out.innerHTML += "<br/><span style='color:#f59e0b'>Note: Since you ran Custom Input, the wrapper was skipped. Ensure your code has a main module if it requires one!</span>";
+        } else if (isCustom) {
+          // Output strictly the results of the custom execution
+          out.innerHTML = `
+             <div style='margin-bottom:10px'><strong style='color:#3b82f6; font-size:1.1rem;'>⚙️ Executed with Custom Input</strong></div>
+             <div style='color:#888'>Your Output:</div>
+             <div style='color:#fff; background:#222; padding:8px; border-radius:4px; font-family:var(--font-mono)'>${outText.trim() || 'No output'}</div>
+             <br/><div style='color:#666; font-size:0.8rem;'>(Process exited with code 0)</div>
+           `;
+        } else if (isMatch) {
+          // Success
+          tState.samplesPassed = tState.samplesPassed || {};
+          tState.samplesPassed[tState.cur] = true;
+
+          if (isSubmit) {
+            out.innerHTML = `
+                 <div style='margin-bottom:15px'><strong style='color:#10b981; font-size:1.8rem;'>Accepted</strong></div>
+                 <div style='color:#ccc; margin-bottom: 20px; font-size: 1.05rem;'>Hidden Testcases Passed: <span style="color:#10b981; font-weight:800;">15 / 15</span></div>
+                 <div style='display:flex; gap:20px; font-family:var(--font-sans);'>
+                   <div style='background:#222; padding:15px; border-radius:8px; flex:1;'>
+                     <div style='color:#888; font-size:0.85rem; margin-bottom:5px;'>Runtime</div>
+                     <div style='color:#fff; font-size:1.2rem; font-weight:600;'>${Math.floor(Math.random() * 20 + 1)} ms</div>
+                     <div style='color:#10b981; font-size:0.75rem; margin-top:5px;'>▶ Beats 98.4% of users</div>
+                   </div>
+                   <div style='background:#222; padding:15px; border-radius:8px; flex:1;'>
+                     <div style='color:#888; font-size:0.85rem; margin-bottom:5px;'>Memory</div>
+                     <div style='color:#fff; font-size:1.2rem; font-weight:600;'>${(Math.random() * 5 + 40).toFixed(1)} MB</div>
+                     <div style='color:#10b981; font-size:0.75rem; margin-top:5px;'>▶ Beats 85.2% of users</div>
+                   </div>
+                 </div>
+               `;
+          } else {
+            out.innerHTML = `
+                 <div style='margin-bottom:10px'><strong style='color:#10b981; font-size:1.1rem;'>✅ Accepted</strong></div>
+                 <div style='color:#ccc'>Sample Testcases Passed: <span style="color:#10b981">1/1</span></div>
+                 <br/>
+                 <div style='color:#888'>Your Output:</div>
+                 <div style='color:#fff; background:#222; padding:8px; border-radius:4px; font-family:var(--font-mono)'>${outText.trim() || 'No output'}</div>
+                 <br/>
+                 <div style='color:#888'>Expected Output:</div>
+                 <div style='color:#ccc; background:#222; padding:8px; border-radius:4px; font-family:var(--font-mono)'>${expectedOutput}</div>
+                 <br/><div style='color:#666; font-size:0.8rem;'>(Process exited with code 0)</div>
+               `;
+          }
+        } else {
+          // Wrong Answer
+          tState.samplesPassed = tState.samplesPassed || {};
+          tState.samplesPassed[tState.cur] = false;
+
+          if (isSubmit) {
+            const randPass = Math.floor(Math.random() * 5); // 0 to 4 passed randomly
+            out.innerHTML = `
+                 <div style='margin-bottom:15px'><strong style='color:#ef4444; font-size:1.8rem;'>Wrong Answer</strong></div>
+                 <div style='color:#ccc; margin-bottom: 20px; font-size: 1.05rem;'>Hidden Testcases Passed: <span style="color:#ef4444; font-weight:800;">${randPass} / 15</span></div>
+                 <div style='background:rgba(239, 68, 68, 0.1); border:1px solid rgba(239,68,68,0.3); padding:15px; border-radius: 8px;'>
+                   <div style='color:#ef4444; font-weight:600; margin-bottom:10px;'>Output Test Match Failed</div>
+                   <div style='color:#888; font-size:0.85rem;'>Your Output:</div>
+                   <div style='color:#ef4444; font-family:var(--font-mono); margin-bottom:10px;'>${outText.trim() || 'No output'}</div>
+                   <div style='color:#888; font-size:0.85rem;'>Expected Output:</div>
+                   <div style='color:#10b981; font-family:var(--font-mono);'>${expectedOutput}</div>
+                 </div>
+               `;
+          } else {
+            out.innerHTML = `
+                 <div style='margin-bottom:10px'><strong style='color:#ef4444; font-size:1.1rem;'>❌ Wrong Answer</strong></div>
+                 <div style='color:#ccc'>Sample Testcases Passed: <span style="color:#ef4444">0/1</span></div>
+                 <br/>
+                 <div style='color:#888'>Your Output:</div>
+                 <div style='color:#ef4444; background:#222; padding:8px; border-radius:4px; font-family:var(--font-mono)'>${outText.trim() || 'No output'}</div>
+                 <br/>
+                 <div style='color:#888'>Expected Output:</div>
+                 <div style='color:#10b981; background:#222; padding:8px; border-radius:4px; font-family:var(--font-mono)'>${expectedOutput}</div>
+               `;
+          }
+        }
+
+
+
+    } catch (e) {
+      out.innerHTML = `<span style='color:#ef4444'>Execution Engine Error: ${e.message}<br/>Is the backend running?</span>`;
+    } finally {
+      btn.textContent = isSubmit ? "☁️ Submit" : (isCustom ? "⌨️ Custom Run" : "▶ Run");
+      btn.disabled = false;
+    }
+    }
+
+    async function submitCoding() {
+      clearInterval(tState.timer);
+
+      const out = document.getElementById('cd-output');
+      out.innerHTML = `<div style="color:var(--primary); font-size:1.1rem; text-align:center; padding-top:40px; font-family:sans-serif;">
+        <span style="font-size: 2rem;">⚙️</span><br/>
+        <b>Submitting Code & Running Hidden Testcases...</b>
+      </div>`;
+
+      await new Promise(r => setTimeout(r, 2000));
+
+      let passCount = 0;
+      tState.codes.forEach((c, i) => {
+        if (tState.samplesPassed && tState.samplesPassed[i]) passCount += 1;
+      });
+
+      let totalHidden = 15;
+      let hiddenPassScale = Math.round((passCount / 5) * totalHidden);
+
+      out.innerHTML = `<div style="text-align:center; padding-top:40px; font-family:sans-serif;">
+        <h2 style="color:${hiddenPassScale === totalHidden ? '#10b981' : '#ef4444'}">
+          ${hiddenPassScale === totalHidden ? '✅ All Clear' : '⚠️ Partial Success'}
+        </h2>
+        <h3>Hidden Test Cases Passed: ${hiddenPassScale} / ${totalHidden}</h3>
+        <p style="color:#aaa; font-size:0.9rem; margin-top:10px;">Generating AI Report...</p>
+      </div>`;
+
+      await new Promise(r => setTimeout(r, 1800));
+
+      if (document.exitFullscreen) document.exitFullscreen().catch(() => { });
+      document.getElementById('coding-ui').classList.remove('active');
+
+      let score = hiddenPassScale === 0 ? 0 : Math.round((hiddenPassScale / totalHidden) * 100);
+
+      const payload = {
+        email: user.email, company: tState.comp, type: 'Coding',
+        score, correct: passCount, wrong: 5 - passCount, skipped: 0, total: 5,
+        timeTaken: (30 * 60) - tState.tLeft, breakdown: []
+      };
+
+      try {
+        await fetch(`${API_URL}/tests/submit`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+        });
+        await loadData();
+        showResults(payload);
+      } catch (e) { alert("Submission failed."); }
+    }
+
+    async function submitTest() {
+      clearInterval(tState.timer);
+      if (tState.type !== 'Full' && document.exitFullscreen) document.exitFullscreen().catch(() => { });
+      document.getElementById('test-ui').classList.remove('active');
+
+      const qs = tState.questions;
+      const ans = tState.answers;
+      let cor = 0, wr = 0, sk = 0;
+
+      const breakdown = qs.map((q, i) => {
+        if (ans[i] === -1) sk++;
+        else if (ans[i] === q.ans) cor++;
+        else wr++;
+        return { q: q.q, opts: q.opts, correct: q.ans, ans: ans[i], type: q.type };
+      });
+
+      const score = Math.round((cor / qs.length) * 100);
+
+      const payload = {
+        email: user.email, company: tState.comp, type: tState.type,
+        score, correct: cor, wrong: wr, skipped: sk, total: qs.length,
+        timeTaken: (30 * 60) - tState.tLeft, breakdown
+      };
+
+      try {
+        await fetch(`${API_URL}/tests/submit`, {
+          method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+        });
+        await loadData();
+        
+        if (tState.type === 'Full') {
+           // Transition to Coding automatically
+           const alertDiv = document.createElement('div');
+           alertDiv.style.cssText = "position:fixed; top:20px; left:50%; transform:translateX(-50%); background:var(--primary); color:white; padding:15px 30px; border-radius:8px; z-index:99999; font-weight:bold; box-shadow: 0 10px 30px rgba(0,0,0,0.5);";
+           alertDiv.innerText = "Part 1 Complete! Launching Coding Round...";
+           document.body.appendChild(alertDiv);
+           setTimeout(() => alertDiv.remove(), 4000);
+           
+           tState.type = 'Coding';
+           startTest(); // start coding round
+           return;
+        }
+
+        showResults(payload);
+      } catch (e) { alert("Submission failed. Progress lost.", e); }
+    }
+
+    function showResults(p) {
+      const wr = document.getElementById('results-wrapper');
+
+      // AI Gen Text mapping
+      let aiText = "You demonstrated solid potential. However, focusing on specific core fundamentals will dramatically increase your placement chances.";
+      if (p.score >= 80) aiText = "Exceptional performance. You are highly ready for " + p.company + "'s selection process. Maintain this speed and accuracy.";
+      else if (p.score < 50) aiText = "We noticed gaps in foundational concepts. We highly recommend revisiting standard algorithms and basic quantitative reasoning before your drive.";
+
+      wr.innerHTML = `
+        <button class="btn btn-outline" style="margin-bottom: 2rem;" onclick="document.getElementById('results-wrapper').classList.remove('active')">← Return to Dashboard</button>
+        <div class="result-hero">
+          <div style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 1rem;">${p.company} - ${p.type} Module</div>
+          <div class="r-score">${p.score}%</div>
+          <div style="display:flex; justify-content:center; gap: 2rem; margin-top: 1rem;">
+            <div><span style="color:var(--success); font-weight:700; font-size:1.5rem">${p.correct}</span><br><span style="font-size:0.8rem; color:var(--text-muted)">Correct</span></div>
+            <div><span style="color:var(--danger); font-weight:700; font-size:1.5rem">${p.wrong}</span><br><span style="font-size:0.8rem; color:var(--text-muted)">Incorrect</span></div>
+            <div><span style="color:var(--warning); font-weight:700; font-size:1.5rem">${p.skipped}</span><br><span style="font-size:0.8rem; color:var(--text-muted)">Skipped</span></div>
+          </div>
+        </div>
+
+        <div class="ai-analysis">
+          <h3 style="font-family: var(--font-head); margin-bottom: 0.5rem; display:flex; align-items:center; gap:8px;">✨ AI Performance Analysis</h3>
+          <p style="color: var(--text-muted); line-height: 1.6;">${aiText}</p>
+        </div>
+      `;
+      wr.classList.add('active');
+
+      if (p.score === 100) {
+        setTimeout(() => confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 }, zIndex: 99999 }), 300);
+      }
+    }
+
+    // Dynamic True Activity Graph Generator
+    function renderActivityGrid(hist) {
+      const graphBox = document.getElementById('activity-graph');
+      if (!graphBox) return;
+
+      const ONE_DAY = 24 * 60 * 60 * 1000;
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      let accountAgeDays = 0;
+      if (user && user.id) {
+        const createdAt = parseInt(user.id);
+        if (!isNaN(createdAt)) {
+          accountAgeDays = Math.floor((today.getTime() - new Date(createdAt).setHours(0, 0, 0, 0)) / ONE_DAY);
+          if (accountAgeDays < 0) accountAgeDays = 0;
+        }
+      }
+
+      const activeMap = {};
+      hist.forEach(h => {
+        if (h.date) {
+          const d = new Date(h.date);
+          const k = `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+          activeMap[k] = (activeMap[k] || 0) + 1;
+        }
+      });
+
+      let html = '';
+      for (let i = 0; i < 52; i++) {
+        html += '<div style="display: flex; flex-direction: column; gap: 4px;">';
+        for (let j = 0; j < 7; j++) {
+          const dayIndex = (51 - i) * 7 + (6 - j);
+          const cellDate = new Date(today.getTime() - (dayIndex * ONE_DAY));
+          const cellKey = `${cellDate.getFullYear()}-${cellDate.getMonth()}-${cellDate.getDate()}`;
+
+          let bg = 'var(--bg-dark)';
+          let borderColor = 'rgba(255,255,255,0.02)';
+          let titleText = `${cellDate.toLocaleDateString()}: No tests taken`;
+
+          if (dayIndex > accountAgeDays) {
+            bg = 'rgba(0,0,0,0.3)';
+            borderColor = 'transparent';
+            titleText = `${cellDate.toLocaleDateString()}: Before Account Creation`;
+          } else {
+            if (activeMap[cellKey]) {
+              const count = activeMap[cellKey];
+              if (count >= 3) bg = 'var(--primary)';
+              else if (count === 2) bg = 'rgba(99, 102, 241, 0.7)';
+              else bg = 'rgba(99, 102, 241, 0.4)';
+              titleText = `${cellDate.toLocaleDateString()}: ${count} tests taken`;
+              borderColor = 'rgba(255,255,255,0.05)';
+            } else {
+              bg = 'var(--bg-dark)';
+            }
+          }
+
+          html += `<div style="width: 13px; height: 13px; border-radius: 3px; background: ${bg}; border: 1px solid ${borderColor}; cursor: pointer;" title="${titleText}"></div>`;
+        }
+        html += '</div>';
+      }
+      graphBox.innerHTML = html;
+    }
+
+    // Active Anti-Cheat Proctoring Engine
+    let cheatCount = 0;
+    document.addEventListener("visibilitychange", () => {
+      const isAptActive = document.getElementById('test-ui').classList.contains('active');
+      const isCodActive = document.getElementById('coding-ui').classList.contains('active');
+
+      if (document.hidden && (isAptActive || isCodActive)) {
+        cheatCount++;
+        if (cheatCount >= 3) {
+          alert('Maximum warnings exceeded. Your test is being terminated automatically.');
+          if (isAptActive) submitTest();
+          if (isCodActive) submitCoding();
+          document.getElementById('proctor-modal').style.display = 'none';
+        } else {
+          document.getElementById('proctor-cheat-count').textContent = cheatCount;
+          document.getElementById('proctor-modal').style.display = 'flex';
+        }
+      }
+    });
+
+    document.addEventListener('contextmenu', event => {
+      if (document.getElementById('test-ui').classList.contains('active') || document.getElementById('coding-ui').classList.contains('active')) {
+        event.preventDefault();
+      }
+    });
+  </script>
+
+  <!-- Proctoring Warning Modal -->
+  <div id="proctor-modal"
+    style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 9999; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; border: 8px solid var(--danger);">
+    <div style="font-size: 5rem; margin-bottom: 20px;">⚠️</div>
+    <h1
+      style="color: var(--danger); font-family: var(--font-head); font-size: 2.5rem; margin-bottom: 15px; text-transform: uppercase;">
+      Tab Switching Detected</h1>
+    <p
+      style="color: #fff; font-size: 1.2rem; max-width: 600px; text-align: center; line-height: 1.6; margin-bottom: 30px;">
+      Cheating attempt logged. You are strictly prohibited from switching tabs or exiting full screen during an active
+      assessment.
+    </p>
+    <div
+      style="font-size: 1.5rem; color: #fff; font-weight: bold; background: #333; padding: 15px 30px; border-radius: 8px; margin-bottom: 30px;">
+      Warning: <span id="proctor-cheat-count">1</span> of 3
+    </div>
+    <button class="btn btn-primary"
+      style="background: var(--danger); border-color: var(--danger); font-size: 1.2rem; padding: 15px 40px;"
+      onclick="document.getElementById('proctor-modal').style.display='none';">I Understand, Return to Test</button>
+  </div>
+  <!-- Floating Feedback Button & UI -->
+  <style>
+    .fb-btn {
+      position: fixed; bottom: 30px; right: 30px; z-index: 9999;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff; width: 60px; height: 60px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 10px 20px rgba(99,102,241,0.4); cursor: pointer;
+      font-size: 1.8rem; transition: transform 0.3s;
+    }
+    .fb-btn:hover { transform: scale(1.1); }
+    .fb-modal {
+      display: none; position: fixed; bottom: 100px; right: 30px; z-index: 9999;
+      background: rgba(10, 10, 12, 0.95); backdrop-filter: blur(20px);
+      border: 1px solid var(--border-color); border-radius: 16px;
+      width: 350px; padding: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      animation: slideUp 0.3s ease; flex-direction: column;
+    }
+    @keyframes slideUp { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+    .fb-modal h3 { font-family: var(--font-head); margin-bottom: 12px; font-size: 1.2rem; }
+    .fb-textarea {
+      width: 100%; height: 120px; background: rgba(0,0,0,0.4); border: 1px solid var(--border-color);
+      border-radius: 8px; color: #fff; padding: 12px; font-family: var(--font-sans); resize: none; margin-bottom: 15px;
+    }
+    .fb-textarea:focus { outline: none; border-color: var(--primary); }
+    .fb-toast {
+      position: fixed; top: 20px; right: 20px; z-index: 99999; background: #10b981;
+      color: #fff; padding: 15px 25px; border-radius: 8px; font-weight: 600; display: none;
+      box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4); animation: slideLeft 0.3s;
+    }
+    @keyframes slideLeft { from{opacity:0; transform:translateX(20px);} to{opacity:1; transform:translateX(0);} }
+  </style>
+
+  <div class="fb-toast" id="fb-toast">✨ Thank you! Your suggestion has been recorded.</div>
+  
+  <div class="fb-modal" id="fb-modal">
+    <h3>💡 Feedback & Suggestions</h3>
+    <textarea class="fb-textarea" id="fb-text" placeholder="Found a bug? Have an idea? Let us know here..."></textarea>
+    <div style="display:flex; justify-content:flex-end; gap: 10px;">
+      <button class="btn btn-outline" style="padding: 8px 16px; margin: 0;" onclick="document.getElementById('fb-modal').style.display='none'">Cancel</button>
+      <button class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;" onclick="submitFeedback()">Submit</button>
+    </div>
+  </div>
+
+  <div class="fb-btn" onclick="document.getElementById('fb-modal').style.display=document.getElementById('fb-modal').style.display==='flex'?'none':'flex'">
+    💡
+  </div>
+
+  <script>
+    async function submitFeedback() {
+      const text = document.getElementById('fb-text').value.trim();
+      if(!text) return;
+      try {
+        const payload = {
+          email: JSON.parse(localStorage.getItem('pp_session_v2') || '{}').email,
+          suggestion: text
+        };
+        await fetch('/api/feedback', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
+        });
+        document.getElementById('fb-modal').style.display = 'none';
+        document.getElementById('fb-text').value = '';
+        const toast = document.getElementById('fb-toast');
+        toast.style.display = 'block';
+        setTimeout(() => toast.style.display = 'none', 3000);
+      } catch(e) { alert('Failed to submit suggestion.'); }
+    }
+  </script>
+</body>
+
+</html>

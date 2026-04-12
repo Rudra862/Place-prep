@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PlacePrep — Elevate Your Career</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-base: #050505;
+    --primary: #6366f1;
+    --primary-glow: rgba(99, 102, 241, 0.5);
+    --secondary: #a855f7;
+    --secondary-glow: rgba(168, 85, 247, 0.4);
+    --text-main: #ffffff;
+    --text-muted: #9ca3af;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    overflow: hidden; /* Avoid scroll on login screen */
+    display: flex;
+  }
+  
+  /* Animated Background */
+  #canvas-bg {
+    position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0;
+  }
+  .gradient-sphere {
+    position: absolute; border-radius: 50%; filter: blur(100px); opacity: 0.5; z-index: 0;
+    animation: float 20s infinite alternate;
+  }
+  .sphere-1 { width: 500px; height: 500px; background: var(--primary); top: -100px; left: -100px; }
+  .sphere-2 { width: 400px; height: 400px; background: var(--secondary); bottom: -50px; right: 10%; animation-delay: -5s; }
+  
+  @keyframes float {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(100px, 50px) scale(1.2); }
+  }
+
+  /* Structural Layout */
+  .hero-section {
+    flex: 1.2; display: flex; flex-direction: column; justify-content: center;
+    padding: 5rem; position: relative; z-index: 10;
+  }
+  .auth-section {
+    flex: 0.8; display: flex; align-items: center; justify-content: center;
+    background: rgba(10, 10, 10, 0.6); backdrop-filter: blur(20px);
+    border-left: 1px solid var(--glass-border);
+    position: relative; z-index: 10; padding: 3rem;
+  }
+
+  /* Hero Content */
+  .brand { display: flex; align-items: center; gap: 12px; margin-bottom: 2rem; }
+  .brand-logo { 
+    width: 48px; height: 48px; background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 12px; display: flex; align-items: center; justify-content: center;
+    font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 24px; color: white;
+    box-shadow: 0 0 20px var(--primary-glow);
+  }
+  .brand-text { font-family: 'Outfit', sans-serif; font-size: 28px; font-weight: 800; letter-spacing: -0.5px; }
+  
+  .hero-title {
+    font-family: 'Outfit', sans-serif; font-size: 5rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #fff, #a5b4fc);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero-subtitle { font-size: 1.25rem; color: var(--text-muted); line-height: 1.6; max-width: 500px; margin-bottom: 3rem; }
+  
+  .stats-container { display: flex; gap: 2rem; }
+  .stat-box { padding: 1rem 0; }
+  .stat-value { font-family: 'Outfit', sans-serif; font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 0.5rem; }
+  .stat-label { font-size: 0.875rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+
+  /* Auth Glass Panel */
+  .auth-panel {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px; padding: 2.5rem; width: 100%; max-width: 420px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+  
+  .tab-group { display: flex; background: rgba(0,0,0,0.3); border-radius: 12px; padding: 4px; margin-bottom: 2rem; border: 1px solid var(--glass-border); }
+  .tab { 
+    flex: 1; text-align: center; padding: 10px; border-radius: 8px; cursor: pointer;
+    font-weight: 600; font-size: 0.9rem; color: var(--text-muted); transition: all 0.3s;
+  }
+  .tab.active { background: var(--glass-bg); color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+  
+  .form-group { margin-bottom: 1.5rem; }
+  .form-group label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
+  .form-control {
+    width: 100%; padding: 14px 16px; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border);
+    border-radius: 12px; color: white; font-family: 'Inter', sans-serif; font-size: 1rem;
+    transition: all 0.3s;
+  }
+  .form-control:focus { outline: none; border-color: var(--primary); background: rgba(99, 102, 241, 0.05); box-shadow: 0 0 0 4px rgba(99,102,241,0.1); }
+  
+  .btn {
+    width: 100%; padding: 14px; border-radius: 12px; border: none; font-family: 'Outfit', sans-serif;
+    font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .btn-primary { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; box-shadow: 0 10px 20px -10px var(--primary); }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 15px 25px -10px var(--primary); }
+  .btn-primary:active { transform: translateY(0); }
+  
+  .btn-outline { background: transparent; border: 1px solid var(--glass-border); color: white; margin-top: 1rem; }
+  .btn-outline:hover { background: var(--glass-bg); }
+
+  .diverder-text { text-align: center; color: var(--text-muted); font-size: 0.8rem; margin: 1.5rem 0; position: relative; }
+  .diverder-text::before, .diverder-text::after { content: ""; position: absolute; top: 50%; width: 30%; height: 1px; background: var(--glass-border); }
+  .diverder-text::before { left: 0; } .diverder-text::after { right: 0; }
+
+  #alert-box { display: none; padding: 12px; border-radius: 8px; margin-bottom: 1rem; font-size: 0.9rem; font-weight: 500; text-align: center; }
+  .alert-error { background: rgba(239, 68, 68, 0.1); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.2); }
+  .alert-success { background: rgba(34, 197, 94, 0.1); color: #86efac; border: 1px solid rgba(34, 197, 94, 0.2); }
+
+  .view { display: none; animation: fadeIn 0.4s ease; }
+  .view.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media(max-width: 968px) {
+    body { flex-direction: column; overflow: auto; }
+    .hero-section { padding: 3rem 2rem; flex: none; }
+    .hero-title { font-size: 3.5rem; }
+    .auth-section { padding: 2rem; border-left: none; border-top: 1px solid var(--glass-border); flex: none; min-height: 500px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Dynamic Background -->
+  <div class="gradient-sphere sphere-1"></div>
+  <div class="gradient-sphere sphere-2"></div>
+  <canvas id="canvas-bg"></canvas>
+
+  <div class="hero-section">
+    <div class="brand">
+      <div class="brand-logo">P</div>
+      <div class="brand-text">PlacePrep</div>
+    </div>
+    <h1 class="hero-title">Crack Every<br>Campus Drive.</h1>
+    <p class="hero-subtitle">Experience a cutting-edge platform powered by high-performance data visualization. Track performance, analyze gaps, and master company-specific patterns.</p>
+    
+    <div class="stats-container">
+      <div class="stat-box">
+        <div class="stat-value">3.2k+</div>
+        <div class="stat-label">PYQ Bank</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value">50+</div>
+        <div class="stat-label">Companies</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value">AI</div>
+        <div class="stat-label">Driven Insights</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="auth-section">
+    <div class="auth-panel">
+      <div class="tab-group">
+        <div class="tab active" onclick="switchTab('login')">Sign In</div>
+        <div class="tab" onclick="switchTab('register')">Create Account</div>
+      </div>
+
+      <div id="alert-box"></div>
+
+      <!-- Login View -->
+      <div id="view-login" class="view active">
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="login-email" class="form-control" placeholder="you@college.edu">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="login-pass" class="form-control" placeholder="••••••••">
+        </div>
+        <button class="btn btn-primary" id="btn-login" onclick="handleLogin()">Access Dashboard ➔</button>
+        
+        <div class="diverder-text">OR CONTINUE WITH</div>
+        <button class="btn btn-outline" onclick="demoLogin()">Guest Exploration Mode</button>
+      </div>
+
+      <!-- Register View -->
+      <div id="view-register" class="view">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="reg-name" class="form-control" placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="reg-email" class="form-control" placeholder="you@college.edu">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="reg-pass" class="form-control" placeholder="••••••••">
+        </div>
+        <button class="btn btn-primary" id="btn-register" onclick="handleRegister()">Create Account ➔</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Particles Script -->
+  <script>
+    const canvas = document.getElementById('canvas-bg');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    function resize() { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; }
+    window.addEventListener('resize', resize); resize();
+    
+    const particles = [];
+    for(let i=0; i<50; i++) {
+      particles.push({
+        x: Math.random() * width, y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.5, vy: (Math.random() - 0.5) * 0.5,
+        s: Math.random() * 2 + 1
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+      particles.forEach(p => {
+        p.x += p.vx; p.y += p.vy;
+        if(p.x < 0 || p.x > width) p.vx *= -1;
+        if(p.y < 0 || p.y > height) p.vy *= -1;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.s, 0, Math.PI*2); ctx.fill();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
+
+  <!-- Auth Logic hooked to Backend -->
+  <script>
+    // Redirect if already logged in
+    window.addEventListener('load', () => {
+      if(localStorage.getItem('pp_session_v2')) {
+        window.location.href = 'dashboard.html';
+      }
+    });
+
+    const API_URL = window.location.origin + '/api';
+
+    function switchTab(tab) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+      if (window.event) {
+          const t = window.event.currentTarget || window.event.target;
+          if (t && t.classList) t.classList.add('active');
+      }
+      document.getElementById(`view-${tab}`).classList.add('active');
+      hideAlert();
+    }
+
+    function showAlert(msg, isError=true) {
+      const box = document.getElementById('alert-box');
+      box.textContent = msg;
+      box.className = isError ? 'alert-error' : 'alert-success';
+      box.style.display = 'block';
+    }
+    function hideAlert() { document.getElementById('alert-box').style.display = 'none'; }
+
+    async function handleLogin() {
+      const email = document.getElementById('login-email').value.trim();
+      const password = document.getElementById('login-pass').value;
+      if(!email || !password) return showAlert('Please fill all fields');
+      
+      const btn = document.getElementById('btn-login');
+      btn.textContent = "Authenticating..."; btn.disabled = true;
+
+      try {
+        const req = await fetch(`${API_URL}/auth/login`, {
+          method: 'POST', headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({email, password})
+        });
+        const res = await req.json();
+        
+        if(!req.ok) throw new Error(res.error || 'Login failed');
+        
+        localStorage.setItem('pp_session_v2', JSON.stringify(res.user));
+        window.location.href = 'dashboard.html';
+      } catch (err) {
+        showAlert(err.message);
+        btn.textContent = "Access Dashboard ➔"; btn.disabled = false;
+      }
+    }
+
+    async function handleRegister() {
+      const name = document.getElementById('reg-name').value.trim();
+      const email = document.getElementById('reg-email').value.trim();
+      const password = document.getElementById('reg-pass').value;
+      if(!name || !email || !password) return showAlert('Please fill all fields');
+
+      const btn = document.getElementById('btn-register');
+      btn.textContent = "Creating..."; btn.disabled = true;
+
+      try {
+        const req = await fetch(`${API_URL}/auth/register`, {
+          method: 'POST', headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({name, email, password})
+        });
+        const res = await req.json();
+        
+        if(!req.ok) throw new Error(res.error || 'Registration failed');
+        
+        localStorage.setItem('pp_session_v2', JSON.stringify(res.user));
+        window.location.href = 'dashboard.html';
+      } catch (err) {
+        showAlert(err.message);
+        btn.textContent = "Create Account ➔"; btn.disabled = false;
+      }
+    }
+
+    async function demoLogin() {
+      // For demo, forcefully register/login a guest user
+      const guest = { name: "Guest Explorer", email: `guest_${Date.now()}@placeprep.in`, password: "demo" };
+      try {
+        const req = await fetch(`${API_URL}/auth/register`, {
+          method: 'POST', headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(guest)
+        });
+        const res = await req.json();
+        localStorage.setItem('pp_session_v2', JSON.stringify(res.user));
+        window.location.href = 'dashboard.html';
+      } catch(e) {
+        // Fallback login if registered
+      }
+    }
+  </script>
+</body>
+</html>
